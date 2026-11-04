@@ -106,6 +106,16 @@
      body level (or below) — otherwise their var(--ph) bakes to the :root amber
      and the bezel "borders" stay amber no matter which theme is picked. */
 }
+/* TC — the Tribuna Central phosphor, built from the site's real design system (measured on
+   tribunacentral.com): red #FF2A44 as the phosphor, orange #FF793C as the warm accent, gold #FDCE6B
+   as the lead/"gold" token, body black #070608. Default theme for TC Offices. */
+body.theme-tc {
+  --ph: #ff2a44; --ph-bright: #ffc3cb; --ph-dim: #b81f33; --ph-faint: #2b070c;
+  --ink: #1a0408; --ph-glow: rgba(255, 42, 68, 0.45); --ph-glow2: rgba(255,42,68,0.14);
+  --bg: #070608; --panel: rgba(14, 5, 8, 0.93); --panel2: #170709; --warn: #ff793c; --text: #f3a9b2;
+  --gold: #fdce6b; --ph-rgb: 255, 42, 68; --ph-bright-rgb: 255, 195, 203; --gold-rgb: 253, 206, 107;
+  --cam-grade: saturate(1.04) contrast(1.08) brightness(0.95);
+}
 body.theme-amber {
   --ph: #ffaa33; --ph-bright: #ffd9a3; --ph-dim: #b9791c; --ph-faint: #1e1404;
   --ink: #190f02; --ph-glow: rgba(255, 170, 51, 0.5); --ph-glow2: rgba(255,170,51,0.14);
@@ -390,11 +400,13 @@ body:has(#screen-game.active):not(.refit-on) #logo { display: flex; }
    grows past ~56px, retrace finer (dev/trace-logo.mjs); if it ever shrinks below 24, switch to
    --preset=solid, which is the legible floor.
    No CSS glow/drop-shadow — removed per Andrew, and that still stands. */
+/* TC Offices: the mask is now brand/tc-wordmark.svg (path outlines, see dev/make-tc-wordmark.py);
+   the ratio below is that SVG's viewBox (one line, same 30px seat the STARNET mark had). Swap the file (and the ratio) when Jerome's definitive mark lands. */
 .logo-img {
-  height: 30px; aspect-ratio: 946 / 160; display: block;
+  height: 30px; aspect-ratio: 514 / 80; display: block;
   background-color: var(--ph);
-  -webkit-mask: url(../assets/brand/starnet-wordmark.svg) center / contain no-repeat;
-          mask: url(../assets/brand/starnet-wordmark.svg) center / contain no-repeat;
+  -webkit-mask: url(../assets/brand/tc-wordmark.svg) left center / contain no-repeat;
+          mask: url(../assets/brand/tc-wordmark.svg) left center / contain no-repeat;
 }
 /* one confident wordmark in the chrome — the big ASCII logo lives on the
    title screen where it has room to read (salvaged from agent/design-system) */

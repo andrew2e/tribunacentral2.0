@@ -8,7 +8,7 @@ vivo; se actualiza al cerrar cada fase.
 | # | Fase | Qué incluye | Estado |
 | --- | --- | --- | --- |
 | 1 | Base | Fork, versión fijada (`UPSTREAM.md`), arranque desde fuente, `CLAUDE.md` | ✅ |
-| 2 | Marca | Nombre en todo lo visible, logo y wordmark TC, paleta, README propio | 🟡 nombre y textos listos; logo/wordmark TC pendientes de Jerome o generación |
+| 2 | Marca | Nombre en todo lo visible, logo y wordmark TC, paleta, README propio | 🟡 nombre, textos, paleta TC (tema `tc`, por defecto) y wordmark provisional en paths (`dev/make-tc-wordmark.py`) listos; logo/wordmark definitivos pendientes de Jerome |
 | 3 | Redacción precargada | Seed con cinco departamentos y sus agentes; estación con cinco salas y líneas de trabajo | 🟡 roster y saves listos; layout de la estación pendiente de validar en navegador |
 | 4 | Skills y conectores | Portar las 4 skills TC; conectores Drive, Trello, WP Royal MCP, Ahrefs, Slack, GitHub; cron de vigilancia y de "Listo para WP" | ⬜ |
 | 5 | Arte TC | Personajes (uno por agente) y muebles de las cinco salas; retirar el arte heredado | ⬜ |
