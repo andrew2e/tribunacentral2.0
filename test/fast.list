@@ -436,7 +436,6 @@ test/qa-message-content.test.js
 test/qa-closer.test.js
 test/qa-ready.test.js
 test/qa-product-perfect.test.js
-test/qa-product-perfect-claims.test.js
 test/qa-claims-streaming.test.js
 test/website-pricing-hold.test.js
 test/website-docs-navigation.test.js
@@ -1097,7 +1096,6 @@ test/release-ritual.test.js
 test/release-notes-security-wording.test.js
 test/release-notes-dossier-tabs.test.js
 test/release-installer-selection.test.mjs
-test/opensource-readiness.test.js
 test/source-release-mirror.test.js
 test/release-train-chrome-warmup.test.js
 test/release-train-provenance.test.js
@@ -1108,7 +1106,6 @@ test/desktop-build-macos-python-host.test.js
 test/desktop-artifact-open.test.js
 test/release-train-macos-trust.test.js
 test/release-train-windows-trust.test.js
-test/release-contract-docs.test.js
 test/website-deploy-staging.test.js
 test/website-app-sync.test.js
 test/website-live-preview.test.js
