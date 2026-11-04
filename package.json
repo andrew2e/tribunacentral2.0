@@ -2,16 +2,16 @@
   "name": "starnet-harness",
   "version": "0.14.1",
   "private": true,
-  "description": "A local-first, gamified desktop harness for building and running real AI-agent teams.",
+  "description": "Tribuna Central 2.0 Offices: a local-first digital newsroom of AI agents for Tribuna Central (fork of StarNet).",
   "license": "MIT",
   "author": "Andrew Sims",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/androoAGI/starnet.git"
+    "url": "git+https://github.com/andrew2e/tribunacentral2.0.git"
   },
-  "homepage": "https://github.com/androoAGI/starnet#readme",
+  "homepage": "https://github.com/andrew2e/tribunacentral2.0#readme",
   "bugs": {
-    "url": "https://github.com/androoAGI/starnet/issues"
+    "url": "https://github.com/andrew2e/tribunacentral2.0/issues"
   },
   "keywords": [
     "ai-agents",

@@ -439,7 +439,7 @@ const WorldModel = (() => {
   function freshDoc(createdAt) {
     const doc = {
       schema: 'starnet.station', version: STATION_VERSION, _nid: 1,
-      meta: { name: 'STARNET STATION', createdAt: createdAt || stationId(), tier: 0, spawnRoomId: null, trunkRoomId: null },
+      meta: { name: 'TRIBUNA CENTRAL 2.0', createdAt: createdAt || stationId(), tier: 0, spawnRoomId: null, trunkRoomId: null },
       rooms: {}, order: [], props: [], belts: {}, edges: []
     };
     // seed the shabby starter HAB (18×11 floor — the v7 / world.js starter room), so a new

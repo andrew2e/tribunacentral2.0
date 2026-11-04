@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="Tribuna Central 2.0 Offices">
+  <!-- Logo provisional para la pantalla de arranque. Monocromo en el "fósforo" claro del tema (currentColor
+       no aplica dentro de <img>, por eso el color va fijo). Reemplazar por el logo definitivo de Jerome. -->
+  <title>Tribuna Central 2.0 Offices</title>
+  <g fill="none" stroke="#dfe9f5" stroke-width="6">
+    <rect x="18" y="18" width="864" height="264" rx="6"/>
+    <rect x="34" y="34" width="832" height="232" rx="4" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+  <g fill="#dfe9f5" font-family="'VT323', 'Courier New', monospace" text-anchor="middle">
+    <text x="450" y="128" font-size="104" letter-spacing="4">TRIBUNA CENTRAL</text>
+    <text x="450" y="206" font-size="58" letter-spacing="12">2.0 OFFICES</text>
+    <text x="450" y="250" font-size="26" letter-spacing="8" fill-opacity="0.7">REDACCIÓN DIGITAL</text>
+  </g>
+</svg>

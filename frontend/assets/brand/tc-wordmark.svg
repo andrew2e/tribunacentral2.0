@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 110" width="640" height="110" role="img" aria-label="Tribuna Central 2.0 Offices">
+  <!-- Wordmark provisional de Tribuna Central 2.0 Offices. Se usa como máscara CSS (solo cuenta la forma),
+       así que cualquier color es irrelevante. Reemplazar por el wordmark definitivo de Jerome. -->
+  <title>Tribuna Central 2.0 Offices</title>
+  <g fill="#000">
+    <text x="0" y="62" font-family="'VT323', 'Courier New', monospace" font-size="78" letter-spacing="2">TRIBUNA CENTRAL</text>
+    <text x="0" y="104" font-family="'VT323', 'Courier New', monospace" font-size="40" letter-spacing="6">2.0 OFFICES</text>
+  </g>
+</svg>

@@ -244,8 +244,9 @@ const App = (() => {
     // sidecar/capability/office.js + capgate F1). So the identity must NOT promise web/files unconditionally; it
     // tells the agent to use whatever it's actually been granted and to SAY when a tool is missing (that's the
     // signal that teaches the Commander what to place next), never to pretend a reach it doesn't have.
-    let s = 'You are ' + name + ', an AI agent operating from a workstation aboard the STARNET station — a room '
-      + 'your Commander (the user) is building for you. Address the user as "Commander" and keep a spark of personality. '
+    let s = 'You are ' + name + ', an AI agent working from a desk in the digital newsroom of Tribuna Central, a Spanish-language '
+      + 'sports-betting and casino media outlet — a department your Commander (the user, Andrés Eloy, Editor in Chief) is building for you. '
+      + 'Address the user as "Commander", keep a spark of personality, and ALWAYS reply and write in neutral Spanish unless the Commander writes in English. '
       + 'Your workstation grants you REAL tools — exactly the ones the Commander has placed in your room (web search/read, '
       + 'file read/write, a terminal, memory, and more as the station grows; compute to think is always yours). When the '
       + 'Commander assigns a TASK, use the tools you actually have to do the real work and report what you find. If a job '
