@@ -24,12 +24,26 @@ const path = require('node:path');
 const { spawn } = require('node:child_process');
 
 const REPO = path.resolve(__dirname, '..');
-const FIXTURE = path.join(__dirname, 'fixtures', 'seed-workspace');
+// --fixture <name>: which folder under dev/fixtures/ to materialize. The original StarNet dev fixture
+// (seed-workspace: one agent, OpenRouter) stays the default; `tc-offices` is the Tribuna Central newsroom.
+// A fixture may ship a seed.json with { provider, model, fullAccess } defaults so it boots without a
+// dev/.env.dev (the claude-cli provider needs no key and no OpenRouter catalog check).
+const fixtureArg = process.argv.indexOf('--fixture');
+const fixtureValue = fixtureArg < 0 ? null : process.argv[fixtureArg + 1];
+if (fixtureArg >= 0 && (!fixtureValue || fixtureValue.startsWith('--') || /[\\/]/.test(fixtureValue))) die('--fixture requires a folder name under dev/fixtures/');
+const FIXTURE = path.join(__dirname, 'fixtures', fixtureValue || 'seed-workspace');
+const SEED_META = readSeedMeta(FIXTURE);
 const workspaceArg = process.argv.indexOf('--workspace');
 const workspaceValue = workspaceArg < 0 ? null : process.argv[workspaceArg + 1];
 if (workspaceArg >= 0 && (!workspaceValue || workspaceValue.startsWith('--'))) die('--workspace requires a directory');
 if (workspaceArg >= 0 && !process.argv.includes('--keep')) die('--workspace requires --keep; explicit workspaces are never cleared');
-const SCRATCH = workspaceValue ? path.resolve(workspaceValue) : path.join(__dirname, '.scratch-workspace');
+// each fixture gets its own scratch dir so switching fixtures never clobbers the other one's kept state
+const SCRATCH = workspaceValue ? path.resolve(workspaceValue) : path.join(__dirname, fixtureValue ? '.scratch-' + fixtureValue : '.scratch-workspace');
+
+function readSeedMeta(dir) {
+  try { const m = JSON.parse(fs.readFileSync(path.join(dir, 'seed.json'), 'utf8')); return (m && typeof m === 'object') ? m : {}; }
+  catch (_) { return {}; }
+}
 const ENV_DEV = path.join(__dirname, '.env.dev');
 const SIDECAR = path.join(REPO, 'sidecar', 'index.js');
 
@@ -67,7 +81,8 @@ function materializeWorkspace(model) {
   // the real save: summoned crew + built floor vanished on every --keep restart. With --keep we only
   // fill in MISSING files (a fixture file added since the scratch was made) and never touch existing ones.
   const kept = KEEP && fs.existsSync(path.join(SCRATCH, 'agent.save.json'));
-  fs.cpSync(FIXTURE, SCRATCH, { recursive: true, force: !kept, errorOnExist: false });
+  // seed.json is launcher metadata, not workspace state: never copy it into the station's files
+  fs.cpSync(FIXTURE, SCRATCH, { recursive: true, force: !kept, errorOnExist: false, filter: (src) => path.basename(src) !== 'seed.json' });
   if (kept) return;   // the kept save/roster already carry the session's real model + updatedAt
 
   const now = Date.now();
@@ -137,13 +152,19 @@ async function checkModelInCatalog(model) {
   }
 }
 
+function seededAgentNames() {
+  try { const r = JSON.parse(fs.readFileSync(path.join(FIXTURE, 'agent.roster.json'), 'utf8')); return (r.agents || []).map(a => a.name || a.agentId); }
+  catch (_) { return ['(no roster)']; }
+}
+
 async function main() {
   const hadEnvDev = loadEnvDev();
   if (!fs.existsSync(SIDECAR)) die('cannot find sidecar at ' + SIDECAR);
   if (!fs.existsSync(FIXTURE)) die('cannot find the seed fixture at ' + FIXTURE);
 
   const key = String(process.env.SKYNET_OPENROUTER_KEY || '').trim();
-  const model = String(process.env.SKYNET_DEFAULT_MODEL || '').trim();
+  const provider = String(SEED_META.provider || 'openrouter').trim();
+  const model = String(process.env.SKYNET_DEFAULT_MODEL || SEED_META.model || '').trim();
   const port = String(process.env.SKYNET_PORT || process.env.PORT || '8787').trim();
 
   if (!model) {
@@ -152,7 +173,7 @@ async function main() {
         '    SKYNET_DEFAULT_MODEL=anthropic/claude-haiku-4.5   # a live id (ids rot — see .env.dev.example)\n' +
         (hadEnvDev ? '  (dev/.env.dev was found but had no SKYNET_DEFAULT_MODEL)' : '  (no dev/.env.dev found yet)'));
   }
-  if (!key) {
+  if (!key && provider === 'openrouter') {
     console.warn('[dev:seed] WARNING: no SKYNET_OPENROUTER_KEY set — the UI will load and resume, but agent\n' +
                  '           runs will fail until a key is provided (set it in dev/.env.dev). If you sign in\n' +
                  '           with ChatGPT/Codex instead, ignore this.');
@@ -160,14 +181,16 @@ async function main() {
 
   // Pre-flight the live catalog so a dead default model is called out LOUDLY here, not silently swallowed
   // until the agent's first chat fails. Fail-open: never blocks the launch (see checkModelInCatalog).
-  await checkModelInCatalog(model);
+  if (provider === 'openrouter') await checkModelInCatalog(model);   // only OpenRouter ids rot against a public catalog
 
   materializeWorkspace(model);
 
   const childEnv = Object.assign({}, process.env, {
     SKYNET_DEV: '1',
     // SEED_FULL_ACCESS=0 boots WITHOUT the env-forced override, so the PERMISSIONS pane can be exercised live.
-    SKYNET_FULL_ACCESS: process.env.SEED_FULL_ACCESS === '0' ? '' : '1',
+    // a fixture may opt OUT of forced full access (seed.json fullAccess:false) so consent prompts stay real — the
+    // Tribuna Central newsroom does; the StarNet dev fixture keeps the old no-prompts default
+    SKYNET_FULL_ACCESS: (process.env.SEED_FULL_ACCESS === '0' || SEED_META.fullAccess === false) ? '' : '1',
     SKYNET_WORKSPACES: SCRATCH,
     SKYNET_PORT: port
   });
@@ -175,14 +198,17 @@ async function main() {
   const url = 'http://127.0.0.1:' + port;
   console.log('');
   console.log('  ╔══════════════════════════════════════════════════════════╗');
-  console.log('  ║  StarNet DEV SEED — booting a pre-onboarded station        ║');
+  console.log('  ║  ' + (String(SEED_META.title || 'StarNet DEV SEED') + ' — pre-onboarded station').padEnd(56) + '║');
   console.log('  ╚══════════════════════════════════════════════════════════╝');
-  console.log('   agent     : NOVA (seeded, no setup needed)');
+  console.log('   fixture   : ' + path.basename(FIXTURE) + (SEED_META.departments ? ' (' + SEED_META.departments.length + ' departments)' : ''));
+  console.log('   agents    : ' + seededAgentNames().join(', '));
+  console.log('   provider  : ' + provider);
   console.log('   model     : ' + model);
-  console.log('   key       : ' + (key ? 'set (' + key.slice(0, 7) + '…)' : 'NOT SET — runs will fail'));
+  if (provider === 'openrouter') console.log('   key       : ' + (key ? 'set (' + key.slice(0, 7) + '…)' : 'NOT SET — runs will fail'));
+  else if (provider === 'claude-cli') console.log('   key       : none needed — uses the local Claude Code sign-in');
   console.log('   workspace : ' + SCRATCH + (KEEP ? '  [--keep: reused]' : '  [fresh copy]'));
   console.log('   open      : ' + url);
-  console.log('   (full access on; no consent prompts; dev auto-boot skips onboarding)');
+  console.log(childEnv.SKYNET_FULL_ACCESS ? '   (full access on; no consent prompts; dev auto-boot skips onboarding)' : '   (consent prompts ON; dev auto-boot skips onboarding)');
   console.log('');
 
   const child = spawn(process.execPath, [SIDECAR], { cwd: REPO, env: childEnv, stdio: 'inherit' });

@@ -1,0 +1,52 @@
+{
+  "name": "tc-offices",
+  "title": "Tribuna Central 2.0 Offices",
+  "provider": "claude-cli",
+  "model": "sonnet",
+  "fullAccess": false,
+  "departments": [
+    {
+      "id": "direccion",
+      "name": "Dirección de contenido",
+      "agents": [
+        "PAUTA",
+        "TABLERO"
+      ]
+    },
+    {
+      "id": "investigacion",
+      "name": "Investigación",
+      "agents": [
+        "LUPA",
+        "VIGÍA",
+        "RADAR"
+      ]
+    },
+    {
+      "id": "qa",
+      "name": "QA",
+      "agents": [
+        "CORRECTOR",
+        "VERIFICADOR",
+        "VOZ",
+        "CIERRE"
+      ]
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "agents": [
+        "RANKING",
+        "ENLACE"
+      ]
+    },
+    {
+      "id": "desarrollo",
+      "name": "Desarrollo web",
+      "agents": [
+        "FORJA",
+        "PRENSA"
+      ]
+    }
+  ]
+}
