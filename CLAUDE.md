@@ -32,7 +32,7 @@ Sala = equipo con permisos; objeto colocado = capacidad real (`sidecar/capabilit
 
 | Departamento | Función | Capacidades |
 | --- | --- | --- |
-| **Investigación** | Research de contenido; vigilancia de novedades de las casas de apuestas y casinos que ya reseña TC; competencia | web, archivos, memoria, Ahrefs, cron |
+| **Investigación** | Research de contenido; vigilancia de novedades de las casas de apuestas y casinos que ya reseña TC; competencia; investigación técnica de apps y sitios (SONDA, `docs/TC_REA.md`) | web, archivos, memoria, Ahrefs, cron, REA en Safe Cell |
 | **Dirección de contenido** | Gerencia editorial: planifica tandas, asigna temas a los escritores, controla el board | Drive, Trello, archivos, orquestador |
 | **QA** | Revisa las entregas de los escritores (gramática, hechos, voz TC, completitud, SEO on-page), devuelve cambios o los aplica | Drive/Docs, archivos, Slack (aviso a escritores), bucle de revisión |
 | **SEO** | Auditorías GSC/Ahrefs, keywords, canibalización, on-page, enlazado interno | Ahrefs, GSC, WordPress (Yoast), web |

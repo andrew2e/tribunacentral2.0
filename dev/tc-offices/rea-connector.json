@@ -1,0 +1,12 @@
+{
+  "id": "rea",
+  "label": "REA",
+  "transport": "stdio",
+  "agentId": "sonda",
+  "command": "npx",
+  "args": ["-y", "rea-agents@6.9.0", "mcp"],
+  "env": {
+    "REA_MCP_TOOL_FAMILIES": "application,electron,session",
+    "REA_MCP_OUTPUT_SCHEMA_PROFILE": "off"
+  }
+}

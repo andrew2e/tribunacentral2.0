@@ -159,6 +159,12 @@ function seededAgentNames() {
 
 async function main() {
   const hadEnvDev = loadEnvDev();
+  // a fixture may pin sidecar settings in seed.json `env` (e.g. the Safe Cell image an agent's tools need).
+  // Only STARNET_*/SKYNET_* names, and never over a value already set in the shell or dev/.env.dev.
+  const seedEnv = (SEED_META.env && typeof SEED_META.env === 'object' && !Array.isArray(SEED_META.env)) ? SEED_META.env : {};
+  for (const k of Object.keys(seedEnv)) {
+    if (/^(STARNET|SKYNET)_[A-Z0-9_]+$/.test(k) && process.env[k] === undefined) process.env[k] = String(seedEnv[k]);
+  }
   if (!fs.existsSync(SIDECAR)) die('cannot find sidecar at ' + SIDECAR);
   if (!fs.existsSync(FIXTURE)) die('cannot find the seed fixture at ' + FIXTURE);
 

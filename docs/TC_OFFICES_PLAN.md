@@ -27,8 +27,10 @@ en mayúsculas, como hace la app; Andrés los puede cambiar en el seed.
 | **LUPA** | researcher | Research de contenido para un tema o keyword: fuentes, datos, ángulos, qué ya publicó TC (anti-canibalización). Entrega un brief. |
 | **VIGÍA** | scout | Vigila las casas de apuestas y casinos que TC ya reseña: bonos, términos, licencias, apps, métodos de pago. Corre en cron y entrega solo cambios confirmados con URL y fecha. |
 | **RADAR** | analyst | Competencia: qué publican los medios rivales en los clusters de TC, huecos de contenido, tendencias. |
+| **SONDA** | engineer | Investigación técnica: cómo funciona por dentro una app o un sitio (competidores, operadores reseñados), con evidencia. Usa REA en una celda aislada. Ver `docs/TC_REA.md`. |
 
-Capacidades: web (`dish`), archivos (`cabinet`), memoria (`notebook`), conector Ahrefs.
+Capacidades: web (`dish`), archivos (`cabinet`), memoria (`notebook`), conector Ahrefs. SONDA: perfil SAFE CELL (Docker)
+y conector REA.
 Línea: INBOX ▸ LUPA ▸ OUTBOX (`research_line` reducida) + VIGÍA con cron semanal.
 
 ### 2. Dirección de contenido (sala `direccion`)
@@ -94,6 +96,7 @@ node dev/seed.js --fixture tc-offices        # ver dev/seed.js; si no acepta --f
 
 ## Pendientes conocidos
 
+- Primera conexión de REA en el Mac con Docker (`docs/TC_REA.md`): no se pudo probar dentro de la celda.
 - Validar en navegador el seed multiagente (el fixture original solo tenía un agente).
 - Diseñar el layout de la estación (cinco salas) y guardarlo como `station` en el seed.
 - Logo y wordmark TC en `frontend/assets/brand/`.

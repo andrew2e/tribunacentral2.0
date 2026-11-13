@@ -19,7 +19,8 @@
       "agents": [
         "LUPA",
         "VIGÍA",
-        "RADAR"
+        "RADAR",
+        "SONDA"
       ]
     },
     {
@@ -48,5 +49,8 @@
         "PRENSA"
       ]
     }
-  ]
+  ],
+  "env": {
+    "STARNET_DOCKER_IMAGE": "node:24-bookworm"
+  }
 }
