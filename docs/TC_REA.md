@@ -39,8 +39,8 @@ Decisiones:
 2. Arranca la redacción: `node dev/seed.js --fixture tc-offices --keep`.
 3. En otra terminal: `node dev/tc-connect-rea.mjs`. Debe terminar con `connected=true` y el número de
    herramientas. La primera vez tarda: Docker descarga la imagen y `npx` instala REA dentro de la celda.
-4. En la estación, coloca un objeto **connector** en la sala de SONDA (sin él, una Safe Cell no recibe
-   herramientas de conectores).
+4. Nada más: el seed ya trae el objeto **CONNECTOR** en la sala INVESTIGACIÓN, unido a `rea`
+   (`dev/tc-offices/build-station.js`). Si lo quitas, vuelve a colocarlo en BUILD MODE y únelo a `rea`.
 
 Si el paso 3 dice `saved=true · connected=false`, el conector quedó guardado y el motivo aparece en la misma
 línea y en el panel Connectors; corrige la causa y pulsa Reload.

@@ -9,7 +9,7 @@ vivo; se actualiza al cerrar cada fase.
 | --- | --- | --- | --- |
 | 1 | Base | Fork, versión fijada (`UPSTREAM.md`), arranque desde fuente, `CLAUDE.md` | ✅ |
 | 2 | Marca | Nombre en todo lo visible, logo y wordmark TC, paleta, README propio | 🟡 nombre, textos, paleta TC (tema `tc`, por defecto) y wordmark provisional en paths (`dev/make-tc-wordmark.py`) listos; logo/wordmark definitivos pendientes de Jerome |
-| 3 | Redacción precargada | Seed con cinco departamentos y sus agentes; estación con cinco salas y líneas de trabajo | 🟡 roster y saves listos; layout de la estación pendiente de validar en navegador |
+| 3 | Redacción precargada | Seed con cinco departamentos y sus agentes; estación con cinco salas y líneas de trabajo | 🟡 roster, saves y estación de cinco salas listos (`dev/tc-offices/build-station.js`, comprobada en navegador); faltan las líneas de trabajo |
 | 4 | Skills y conectores | Portar las 4 skills TC; conectores Drive, Trello, WP Royal MCP, Ahrefs, Slack, GitHub; cron de vigilancia y de "Listo para WP" | ⬜ |
 | 5 | Arte TC | Personajes (uno por agente) y muebles de las cinco salas; retirar el arte heredado | ⬜ |
 | 6 | Poda y app instalable | Quitar canales, proveedores y skills ajenos; opcional: build Tauri para macOS | ⬜ |
@@ -97,8 +97,9 @@ node dev/seed.js --fixture tc-offices        # ver dev/seed.js; si no acepta --f
 ## Pendientes conocidos
 
 - Primera conexión de REA en el Mac con Docker (`docs/TC_REA.md`): no se pudo probar dentro de la celda.
-- Validar en navegador el seed multiagente (el fixture original solo tenía un agente).
-- Diseñar el layout de la estación (cinco salas) y guardarlo como `station` en el seed.
+- Líneas de trabajo por departamento (p. ej. `revision_loop` en QA). Hasta que existan, las salas ordenan la oficina
+  pero no separan permisos: un agente solo queda limitado a los objetos de su sala cuando trabaja en una bahía
+  (`WorldModel.agentRoomId`); con escritorio y sin línea recibe los de toda la estación.
 - Logo y wordmark TC en `frontend/assets/brand/`.
 - `src-tauri/tauri.conf.json`: `productName`, `identifier` y updater solo cuando se haga la
   build de escritorio (fase 6).
