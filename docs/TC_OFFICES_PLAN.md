@@ -9,7 +9,7 @@ vivo; se actualiza al cerrar cada fase.
 | --- | --- | --- | --- |
 | 1 | Base | Fork, versión fijada (`UPSTREAM.md`), arranque desde fuente, `CLAUDE.md` | ✅ |
 | 2 | Marca | Nombre en todo lo visible, logo y wordmark TC, paleta, README propio | 🟡 nombre, textos, paleta TC (tema `tc`, por defecto) y wordmark provisional en paths (`dev/make-tc-wordmark.py`) listos; logo/wordmark definitivos pendientes de Jerome |
-| 3 | Redacción precargada | Seed con cinco departamentos y sus agentes; estación con cinco salas y líneas de trabajo | 🟡 roster, saves y estación de cinco salas listos (`dev/tc-offices/build-station.js`, comprobada en navegador); faltan las líneas de trabajo |
+| 3 | Redacción precargada | Seed con cinco departamentos y sus agentes; estación con cinco salas y líneas de trabajo | 🟡 roster, saves y estación de diez salas (25 agentes) listos (`dev/tc-offices/build-station.js`, comprobada en navegador); faltan las líneas de trabajo |
 | 4 | Skills y conectores | Portar las 4 skills TC; conectores Drive, Trello, WP Royal MCP, Ahrefs, Slack, GitHub; cron de vigilancia y de "Listo para WP" | ⬜ |
 | 5 | Arte TC | Personajes (uno por agente) y muebles de las cinco salas; retirar el arte heredado | ⬜ |
 | 6 | Poda y app instalable | Quitar canales, proveedores y skills ajenos; opcional: build Tauri para macOS | ⬜ |
@@ -103,3 +103,19 @@ node dev/seed.js --fixture tc-offices        # ver dev/seed.js; si no acepta --f
 - Logo y wordmark TC en `frontend/assets/brand/`.
 - `src-tauri/tauri.conf.json`: `productName`, `identifier` y updater solo cuando se haga la
   build de escritorio (fase 6).
+
+## Ampliación del 2026-11-13: diez departamentos
+
+Andrés Eloy nombra los departamentos así: **Research** (antes Investigación, con dos pisos: deportes y casas de
+apuestas) y **Redacción** (antes Dirección de contenido; PAUTA es el jefe de redacción). Se añadieron cinco:
+
+| Departamento | Agentes | Función |
+| --- | --- | --- |
+| Cumplimiento y juego responsable | NORMA (paralegal), AVISO (auditor) | Permisos SEGOB y regulación; revisión de juego responsable de cada pieza, entre QA y SEO |
+| Alianzas con operadores | ALIANZA (negotiator), VÍNCULO (registrar) | Ficha de cada operador; inventario y comprobación de enlaces de afiliado |
+| Datos y analítica | MÉTRICA (analyst), EMBUDO (analyst) | Tráfico y búsquedas; conversión por operador y artículo |
+| Redes y distribución | ALTAVOZ (marketer), BOLETÍN (copywriter), CLAQUETA (producer) | Redes sociales, newsletter, guiones de video |
+| Diseño | TRAZO (designer), MARCA (curator) | Piezas visuales; coherencia de marca y banco de imágenes |
+
+Ningún agente publica, envía ni negocia: todos entregan para aprobación. Pendiente: los hubs (NFL Fantasy, Fantasy
+Liga MX, Melate y Progol, equipos de la Liga MX) y los conectores de cada departamento nuevo.

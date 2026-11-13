@@ -24,7 +24,7 @@ http://127.0.0.1:8787). El shell Tauri es opcional y queda para el final.
 | Upstream | No se persigue. Solo cherry-picks puntuales (ver `UPSTREAM.md`). |
 | Usuarios | Uno. No hacen falta cuentas, equipos, ni relays/canales de mensajería (Telegram, Discord, Signal, Matrix, Slack como canal de chat). Slack solo como conector para avisar a escritores. |
 
-## Los cinco departamentos
+## Los diez departamentos
 
 Sala = equipo con permisos; objeto colocado = capacidad real (`sidecar/capability/registry.js`:
 `computer`=pensar, `dish`=web, `cabinet`=archivos, `notebook`=memoria, `workbench`=terminal,
@@ -32,13 +32,20 @@ Sala = equipo con permisos; objeto colocado = capacidad real (`sidecar/capabilit
 
 | Departamento | Función | Capacidades |
 | --- | --- | --- |
-| **Investigación** | Research de contenido; vigilancia de novedades de las casas de apuestas y casinos que ya reseña TC; competencia; investigación técnica de apps y sitios (SONDA, `docs/TC_REA.md`) | web, archivos, memoria, Ahrefs, cron, REA en Safe Cell |
-| **Dirección de contenido** | Gerencia editorial: planifica tandas, asigna temas a los escritores, controla el board | Drive, Trello, archivos, orquestador |
+| **Research** (antes Investigación) | Research de contenido; vigilancia de novedades de las casas de apuestas y casinos que ya reseña TC; competencia; investigación técnica de apps y sitios (SONDA, `docs/TC_REA.md`) | web, archivos, memoria, Ahrefs, cron, REA en Safe Cell |
+| **Redacción** (antes Dirección de contenido; PAUTA es el jefe de redacción) | Gerencia editorial: planifica tandas, asigna temas a los escritores, controla el board | Drive, Trello, archivos, orquestador |
 | **QA** | Revisa las entregas de los escritores (gramática, hechos, voz TC, completitud, SEO on-page), devuelve cambios o los aplica | Drive/Docs, archivos, Slack (aviso a escritores), bucle de revisión |
 | **SEO** | Auditorías GSC/Ahrefs, keywords, canibalización, on-page, enlazado interno | Ahrefs, GSC, WordPress (Yoast), web |
 | **Desarrollo web** | Soporte técnico de tribunacentral.com: WordPress, publicación, código | terminal, archivos, GitHub, WP Royal MCP |
+| **Cumplimiento y juego responsable** | Permiso SEGOB de cada operador reseñado; avisos +18 y de juego responsable en cada pieza (NORMA, AVISO) | web, archivos |
+| **Alianzas con operadores** | Ficha de cada operador aliado; inventario y comprobación de enlaces de afiliado (ALIANZA, VÍNCULO) | web, archivos |
+| **Datos y analítica** | Tráfico y búsquedas; conversión por operador y por artículo (MÉTRICA, EMBUDO) | web, archivos, memoria, GSC |
+| **Redes y distribución** | Redes sociales, newsletter y guiones de video (ALTAVOZ, BOLETÍN, CLAQUETA) | web, archivos |
+| **Diseño** | Piezas visuales e identidad de marca (TRAZO, MARCA) | imágenes, archivos, web |
 
-El detalle de agentes, roles y salas está en `docs/TC_OFFICES_PLAN.md`. Las skills propias de
+El detalle de agentes, roles y salas está en `docs/TC_OFFICES_PLAN.md`; los cinco departamentos añadidos el
+2026-11-13 se definen en el seed y la estación se regenera con `node dev/tc-offices/build-station.js`. Pendientes:
+los hubs (NFL Fantasy, Fantasy Liga MX, Melate y Progol, equipos de la Liga MX). Las skills propias de
 TC (`qa-copywriters-tc`, `publicar-articulos-wp-tc`, `asignaciones-editoriales-tc`,
 `auditoria-gsc`) se portan a `skills-catalog/skills/` en la fase 4.
 

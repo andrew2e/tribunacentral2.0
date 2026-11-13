@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-/* dev/tc-offices/build-station.js — construye la estación de cinco salas de Tribuna Central 2.0 Offices y la guarda
+/* dev/tc-offices/build-station.js — construye la estación de diez salas de Tribuna Central 2.0 Offices y la guarda
    en el seed (dev/fixtures/tc-offices/agent.save.json → doc.station).
 
      node dev/tc-offices/build-station.js           # construye, comprueba y escribe el seed
      node dev/tc-offices/build-station.js --check   # construye y comprueba, sin escribir
 
-   Usa el mismo constructor que BUILD MODE (StationBuilder, patrón "ring"): la sala central es Dirección de contenido y
-   alrededor van Investigación, QA, SEO y Desarrollo web, unidas por pasillos. Después sienta a cada agente en un
+   Usa el mismo constructor que BUILD MODE (StationBuilder, patrón "ring"): la sala central es Redacción y
+   alrededor van los otros nueve departamentos, unidos por pasillos. Después sienta a cada agente en un
    escritorio de su sala y coloca los objetos de capacidad de cada departamento (web, archivos, memoria, terminal y el
    CONNECTOR de REA para SONDA). Termina comprobando que cada objeto se puede alcanzar caminando, que cada agente tiene
    su escritorio en su sala y que la estación pasa la validación de guardado. Si algo falla, no escribe nada.
@@ -37,11 +37,11 @@ function die(msg) { console.error('\n[build-station] ' + msg + '\n'); process.ex
 /* La redacción. `hub` = la sala central (la de inicio, que ya trae los cinco objetos esenciales).
    agents: quién se sienta en la sala (agentId) · gear: objetos de capacidad que se añaden ·
    needs: capacidades que el departamento necesita (cuando haya líneas de trabajo, serán las de su sala). */
-const DIRECCION = 'DIRECCIÓN DE CONTENIDO';
+const DIRECCION = 'REDACCIÓN';
 const PLAN = [
   { name: DIRECCION, hub: true, agents: ['agent', 'tablero'], gear: [],
     needs: ['cabinet', 'computer', 'dish', 'notebook', 'studio', 'workbench'] },
-  { name: 'INVESTIGACIÓN', style: 'desks', size: 'large', agents: ['lupa', 'vigia', 'radar', 'sonda'],
+  { name: 'RESEARCH', style: 'desks', size: 'large', agents: ['lupa', 'vigia', 'radar', 'sonda'],
     gear: ['comms_dish', 'gigs_servercart', { t: 'connector_portal', connectorId: 'rea' }],
     needs: ['cabinet', 'computer', 'connector', 'dish', 'notebook'] },
   { name: 'QA', style: 'desks', size: 'large', agents: ['corrector', 'verificador', 'voz', 'cierre'], gear: ['comms_dish'],
@@ -49,7 +49,17 @@ const PLAN = [
   { name: 'SEO', style: 'desks', agents: ['ranking', 'enlace'], gear: ['comms_dish'],
     needs: ['cabinet', 'computer', 'dish'] },
   { name: 'DESARROLLO WEB', style: 'workshop', agents: ['forja', 'prensa'], gear: ['rack', 'comms_dish'],
-    needs: ['cabinet', 'computer', 'dish', 'workbench'] }
+    needs: ['cabinet', 'computer', 'dish', 'workbench'] },
+  { name: 'CUMPLIMIENTO', style: 'desks', agents: ['norma', 'aviso'], gear: ['comms_dish'],
+    needs: ['cabinet', 'computer', 'dish'] },
+  { name: 'ALIANZAS', style: 'desks', agents: ['alianza', 'vinculo'], gear: ['comms_dish'],
+    needs: ['cabinet', 'computer', 'dish'] },
+  { name: 'DATOS Y ANALÍTICA', style: 'desks', agents: ['metrica', 'embudo'], gear: ['comms_dish', 'gigs_servercart'],
+    needs: ['cabinet', 'computer', 'dish', 'notebook'] },
+  { name: 'REDES Y DISTRIBUCIÓN', style: 'desks', agents: ['altavoz', 'boletin', 'claqueta'], gear: ['comms_dish'],
+    needs: ['cabinet', 'computer', 'dish'] },
+  { name: 'DISEÑO', style: 'desks', agents: ['trazo', 'marca'], gear: ['comms_dish', 'studio'],
+    needs: ['cabinet', 'computer', 'dish', 'studio'] }
 ];
 const SEATS = { desk: 1, desk2: 1, console: 1, consoleL: 1, pixelrig: 1, bench: 1 };
 

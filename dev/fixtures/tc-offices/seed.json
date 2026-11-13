@@ -7,7 +7,7 @@
   "departments": [
     {
       "id": "direccion",
-      "name": "Dirección de contenido",
+      "name": "Redacción",
       "agents": [
         "PAUTA",
         "TABLERO"
@@ -15,7 +15,7 @@
     },
     {
       "id": "investigacion",
-      "name": "Investigación",
+      "name": "Research",
       "agents": [
         "LUPA",
         "VIGÍA",
@@ -47,6 +47,47 @@
       "agents": [
         "FORJA",
         "PRENSA"
+      ]
+    },
+    {
+      "id": "cumplimiento",
+      "name": "Cumplimiento y juego responsable",
+      "agents": [
+        "NORMA",
+        "AVISO"
+      ]
+    },
+    {
+      "id": "alianzas",
+      "name": "Alianzas con operadores",
+      "agents": [
+        "ALIANZA",
+        "VÍNCULO"
+      ]
+    },
+    {
+      "id": "datos",
+      "name": "Datos y analítica",
+      "agents": [
+        "MÉTRICA",
+        "EMBUDO"
+      ]
+    },
+    {
+      "id": "redes",
+      "name": "Redes y distribución",
+      "agents": [
+        "ALTAVOZ",
+        "BOLETÍN",
+        "CLAQUETA"
+      ]
+    },
+    {
+      "id": "diseno",
+      "name": "Diseño",
+      "agents": [
+        "TRAZO",
+        "MARCA"
       ]
     }
   ],

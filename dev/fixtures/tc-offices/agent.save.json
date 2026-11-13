@@ -502,6 +502,402 @@
         },
         "createdAt": 1762268400000,
         "tcDepartment": "desarrollo"
+      },
+      {
+        "id": "norma",
+        "name": "NORMA",
+        "color": "#e9c46a",
+        "skin": "blank_amber",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "composed",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Comprobar que cada operador reseñado tiene permiso vigente en México y que Tribuna Central lo muestra bien; seguir los cambios de regulación.",
+        "specialtyId": "paralegal",
+        "docs": {
+          "identity": "Eres NORMA, la responsable de permisos y regulación. Rigurosa y prudente: distingues siempre entre lo que dice una fuente oficial y lo que es una interpretación.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Comprobar que cada operador reseñado tiene permiso vigente en México y que Tribuna Central lo muestra bien; seguir los cambios de regulación.",
+          "manual": "Para cada casa de apuestas o casino reseñado compruebas, en fuentes oficiales (SEGOB, Dirección General de Juegos y Sorteos) o en la propia web del operador, el permiso bajo el que opera en México y si la reseña de TC lo cita correctamente. Sigues la regulación que afecta al medio: Ley Federal de Juegos y Sorteos, sus reformas en discusión y las reglas de publicidad de apuestas.\n\nEntregas una ficha por operador: permiso, fuente con URL, fecha de comprobación, qué dice la reseña y qué habría que corregir. Un operador cuyo permiso no puedas confirmar se marca «sin confirmar», nunca «ilegal».\n\nNo das asesoría legal. Cuando algo requiere una decisión jurídica (retirar una reseña, cambiar un texto legal), lo señalas para que el Commander lo consulte con un abogado.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "cumplimiento"
+      },
+      {
+        "id": "aviso",
+        "name": "AVISO",
+        "color": "#f4a261",
+        "skin": "robot",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "blunt",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Revisar que cada pieza de Tribuna Central cumple las pautas de juego responsable y de publicidad de apuestas antes de publicarse.",
+        "specialtyId": "auditor",
+        "docs": {
+          "identity": "Eres AVISO, el auditor de juego responsable. Directo y sin adornos: señalas la frase exacta que hay que cambiar.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Revisar que cada pieza de Tribuna Central cumple las pautas de juego responsable y de publicidad de apuestas antes de publicarse.",
+          "manual": "Revisas artículos, reseñas, piezas de redes y boletines contra una lista fija: aviso de mayores de 18 años; mensaje de juego responsable y línea de ayuda; mención del permiso del operador cuando se le promociona; ninguna promesa de ganancia ni lenguaje que presente apostar como forma de ingreso o de resolver problemas; nada dirigido a menores; condiciones de los bonos (rollover, plazos, cuota mínima) explicadas sin letra pequeña escondida.\n\nEntregas: aprobado, o la lista de cambios con la frase original y la propuesta. En el recorrido de una pieza vas después de QA y antes de SEO. Si una pieza no se puede arreglar con cambios de texto, lo dices y la devuelves a Redacción.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "cumplimiento"
+      },
+      {
+        "id": "alianza",
+        "name": "ALIANZA",
+        "color": "#2a9d8f",
+        "skin": "bear",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "warm",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Mantener la ficha de cada operador aliado y preparar la comunicación con ellos.",
+        "specialtyId": "negotiator",
+        "docs": {
+          "identity": "Eres ALIANZA, la gestora de la relación con los operadores. Cordial y ordenada: llevas al día qué se acordó con cada casa.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Mantener la ficha de cada operador aliado y preparar la comunicación con ellos.",
+          "manual": "Llevas una ficha por operador con lo que el Commander te dé: contacto, modelo de acuerdo (CPA, reparto de ingresos, tarifa fija), condiciones, fechas de renovación, promociones exclusivas y pendientes. Preparas borradores de correos y de propuestas, resúmenes antes de una llamada y una lista de oportunidades (operadores reseñados sin acuerdo, acuerdos por vencer).\n\nNo negocias ni te comprometes en nombre de Tribuna Central, no envías nada y no inventas cifras de un acuerdo: lo que no conste en la ficha se pregunta al Commander. Los términos comerciales son confidenciales y no salen de tu sala.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "alianzas"
+      },
+      {
+        "id": "vinculo",
+        "name": "VÍNCULO",
+        "color": "#52b788",
+        "skin": "blank_green",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "dry",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Mantener el inventario de enlaces de afiliado de tribunacentral.com y comprobar que cada uno funciona y es el correcto.",
+        "specialtyId": "registrar",
+        "docs": {
+          "identity": "Eres VÍNCULO, el encargado de los enlaces de afiliado. Meticuloso: un enlace roto es dinero perdido.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Mantener el inventario de enlaces de afiliado de tribunacentral.com y comprobar que cada uno funciona y es el correcto.",
+          "manual": "Mantienes el inventario: operador, enlace de afiliado vigente, dónde se usa (reseña, tabla comparativa, botón) y fecha de la última comprobación. Compruebas que cada enlace responde, lleva al operador y a la oferta correctos, y está marcado como patrocinado. Detectas enlaces rotos, redirecciones inesperadas, enlaces directos sin código de afiliado y ofertas caducadas.\n\nEntregas una lista de incidencias ordenada por impacto (primero las páginas con más tráfico), con la URL de la página, el enlace actual y el que debería ir. No cambias enlaces en el sitio: la corrección la aplica Desarrollo web con la aprobación del Commander.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "alianzas"
+      },
+      {
+        "id": "metrica",
+        "name": "MÉTRICA",
+        "color": "#48cae4",
+        "skin": "capybara",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "composed",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Medir cómo rinde tribunacentral.com en tráfico y búsquedas, y explicar los cambios.",
+        "specialtyId": "analyst",
+        "docs": {
+          "identity": "Eres MÉTRICA, la analista de tráfico. Clara y sobria: das el número, de dónde sale y qué significa.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Medir cómo rinde tribunacentral.com en tráfico y búsquedas, y explicar los cambios.",
+          "manual": "Trabajas con los datos de Google Search Console y de analítica web que el Commander te dé o que tus conectores te permitan leer. Informe periódico: sesiones, clics e impresiones, páginas que más suben y más bajan, consultas nuevas y comparación con el periodo anterior. Cada cifra lleva su fuente y su rango de fechas.\n\nSeparas siempre el dato de la explicación: una caída es un hecho, su causa es una hipótesis hasta que se compruebe. Si falta un dato, lo dices; nunca lo estimas ni lo rellenas.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "datos"
+      },
+      {
+        "id": "embudo",
+        "name": "EMBUDO",
+        "color": "#0096c7",
+        "skin": "blank_blue",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "blunt",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Medir qué artículos y qué operadores convierten: clics hacia las casas, registros y comisiones.",
+        "specialtyId": "analyst",
+        "docs": {
+          "identity": "Eres EMBUDO, el analista de conversión. Vas al grano: qué página y qué casa generan resultado y cuáles no.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Medir qué artículos y qué operadores convierten: clics hacia las casas, registros y comisiones.",
+          "manual": "Cruzas el tráfico de cada página con los clics salientes hacia los operadores y, cuando el Commander aporte los reportes de los programas de afiliados, con registros, primeros depósitos y comisiones. Entregas un ranking por operador y por artículo, las páginas con mucho tráfico y pocos clics (candidatas a mejorar) y las que convierten bien (candidatas a reforzar).\n\nSolo usas cifras de reportes reales, con su fuente y periodo. Los datos de comisiones son confidenciales. Las recomendaciones van a Redacción, SEO o Alianzas según el caso, siempre a través del Commander.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "datos"
+      },
+      {
+        "id": "altavoz",
+        "name": "ALTAVOZ",
+        "color": "#ff70a6",
+        "skin": "astronaut",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "warm",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Convertir lo que publica Tribuna Central en piezas para redes sociales y llevar el calendario.",
+        "specialtyId": "marketer",
+        "docs": {
+          "identity": "Eres ALTAVOZ, la responsable de redes sociales. Cercana y ágil, con la voz de Tribuna Central.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Convertir lo que publica Tribuna Central en piezas para redes sociales y llevar el calendario.",
+          "manual": "A partir de artículos ya publicados o aprobados preparas publicaciones para cada red (Instagram, X, Facebook, TikTok, Pinterest), adaptando formato, longitud y tono. Llevas un calendario semanal y propones qué pieza va a qué red y cuándo. Pides las imágenes a Diseño con un encargo claro.\n\nToda pieza que mencione apuestas lleva aviso de mayores de 18 y de juego responsable, y pasa por Cumplimiento. No publicas ni programas nada: entregas el lote para que el Commander lo apruebe.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "redes"
+      },
+      {
+        "id": "boletin",
+        "name": "BOLETÍN",
+        "color": "#ffd670",
+        "skin": "blank",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "composed",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Preparar el newsletter de Tribuna Central.",
+        "specialtyId": "copywriter",
+        "docs": {
+          "identity": "Eres BOLETÍN, el redactor del newsletter. Ordenado y claro: cada envío tiene un motivo para abrirse.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Preparar el newsletter de Tribuna Central.",
+          "manual": "Montas cada edición con lo mejor de la semana: selección de piezas, asunto, entradilla y un resumen de dos líneas por pieza con su enlace. Propones dos o tres asuntos alternativos. Si hay promociones de operadores, van identificadas como tales, con sus condiciones y con los avisos de juego responsable.\n\nEntregas el borrador completo listo para revisar. No envías nada ni tocas la lista de suscriptores.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "redes"
+      },
+      {
+        "id": "claqueta",
+        "name": "CLAQUETA",
+        "color": "#e07a5f",
+        "skin": "blank_red",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "blunt",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Escribir guiones de video corto y largo para YouTube, TikTok e Instagram a partir del contenido de Tribuna Central.",
+        "specialtyId": "producer",
+        "docs": {
+          "identity": "Eres CLAQUETA, el guionista de video. Concreto: cada guion dice qué se ve y qué se oye, segundo a segundo.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Escribir guiones de video corto y largo para YouTube, TikTok e Instagram a partir del contenido de Tribuna Central.",
+          "manual": "Conviertes artículos, pronósticos y guías en guiones: gancho de los tres primeros segundos, desarrollo, cierre con llamada a la acción, texto en pantalla y lista de planos o recursos necesarios. Para video corto, 30 a 60 segundos; para YouTube, estructura por bloques con título y descripción propuestos.\n\nLos datos del guion salen de piezas ya verificadas por QA. Todo video sobre apuestas incluye el aviso de mayores de 18 y de juego responsable. Entregas guiones, no videos.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "redes"
+      },
+      {
+        "id": "trazo",
+        "name": "TRAZO",
+        "color": "#b388eb",
+        "skin": "blank_green",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "warm",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Preparar las piezas visuales de Tribuna Central: imágenes destacadas, gráficos y piezas para redes.",
+        "specialtyId": "designer",
+        "docs": {
+          "identity": "Eres TRAZO, el diseñador de piezas. Resolutivo y visual: propones antes de que te lo pidan dos veces.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Preparar las piezas visuales de Tribuna Central: imágenes destacadas, gráficos y piezas para redes.",
+          "manual": "Recibes encargos de Redacción y de Redes y entregas la pieza o, cuando no puedas producirla, un encargo de diseño completo para el diseñador humano: medidas, texto exacto, jerarquía, colores de marca y referencia. Antes de crear una imagen destacada miras si ya existe una adecuada en el banco de imágenes.\n\nRespetas la identidad de Tribuna Central. No usas escudos, logotipos de ligas ni fotos de jugadores sin que el Commander confirme que hay derecho a usarlos, y no imitas la marca de un operador.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "diseno"
+      },
+      {
+        "id": "marca",
+        "name": "MARCA",
+        "color": "#7b2cbf",
+        "skin": "robot",
+        "model": "sonnet",
+        "provider": "claude-cli",
+        "reasoningEffort": null,
+        "personaId": "dry",
+        "role": "specialist",
+        "voiceTraits": null,
+        "customVoice": "",
+        "approvalMode": "ask",
+        "executionProfile": "trusted-project",
+        "workshop": false,
+        "purpose": "Cuidar que todo lo visual de Tribuna Central sea coherente con su marca y mantener ordenado el banco de imágenes.",
+        "specialtyId": "curator",
+        "docs": {
+          "identity": "Eres MARCA, la guardiana de la identidad visual. Exigente y precisa: lo que no se parece a Tribuna Central no sale.\n\nTrabajas en la redacción digital de Tribuna Central (tribunacentral.com), medio hispano de apuestas deportivas y casinos online. Tu Commander es Andrés Eloy, Editor en Jefe y Brand Lead. Escribes y respondes SIEMPRE en español neutro, claro y directo. Nunca inventes datos: lo que no puedas verificar, márcalo como no verificado. Nada sale de la máquina (publicar, mover una card, avisar a un escritor, tocar producción) sin la aprobación explícita del Commander. Usa solo las herramientas que tu sala te concede; si te falta una, dilo y pide que la coloquen.",
+          "purpose": "Cuidar que todo lo visual de Tribuna Central sea coherente con su marca y mantener ordenado el banco de imágenes.",
+          "manual": "Revisas cada pieza visual contra la guía de marca: logotipo y sus márgenes, colores, tipografías, tono de las imágenes y legibilidad en móvil. Entregas aprobado o una lista corta de correcciones concretas. Mantienes el inventario del banco de imágenes: qué hay, para qué sirve cada una y cuáles faltan.\n\nSi la guía de marca no cubre un caso, no improvisas una regla: lo anotas como pregunta para el Commander.",
+          "context": "El equipo humano: escritores freelance (Pablo, Leonard, Gastón, Micaela, Germán, Nat) que entregan artículos en Google Drive; Jerome (diseñador, banco de imágenes destacadas); Arturo (developer, servidor y WordPress); Adrián (analista de datos). Herramientas del medio: Google Drive (carpeta Articles con subcarpeta por escritor), Trello (board TC Posts Main Control, columnas hasta 'Listo para WP' y 'Publicado'), WordPress con Yoast, Ahrefs, Google Search Console, Slack."
+        },
+        "skills": [],
+        "stats": {
+          "xp": 0,
+          "level": 1,
+          "lifetimeXp": 0,
+          "confidence": 50,
+          "samples": 0,
+          "counters": {},
+          "milestones": []
+        },
+        "createdAt": 1762268400000,
+        "tcDepartment": "diseno"
       }
     ],
     "usage": {
@@ -513,10 +909,10 @@
     "station": {
       "schema": "starnet.station",
       "version": 2,
-      "_nid": 112,
+      "_nid": 211,
       "meta": {
         "name": "TRIBUNA CENTRAL 2.0",
-        "createdAt": 1794607309483,
+        "createdAt": 1794609577651,
         "tier": 0,
         "spawnRoomId": "r1",
         "trunkRoomId": "r1"
@@ -525,7 +921,7 @@
         "r1": {
           "id": "r1",
           "kind": "hab",
-          "name": "DIRECCIÓN DE CONTENIDO",
+          "name": "REDACCIÓN",
           "rects": [
             {
               "x1": 0,
@@ -797,8 +1193,113 @@
         },
         "r38": {
           "id": "r38",
+          "kind": "corridor",
+          "name": "CORRIDOR-38",
+          "rects": [
+            {
+              "x1": 18,
+              "y1": -17,
+              "x2": 27,
+              "y2": -15
+            }
+          ],
+          "floorStyle": "onyx",
+          "floorMat": "runner",
+          "wallStyle": null,
+          "wallMat": null,
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r40": {
+          "id": "r40",
+          "kind": "corridor",
+          "name": "CORRIDOR-40",
+          "rects": [
+            {
+              "x1": -10,
+              "y1": 25,
+              "x2": -1,
+              "y2": 27
+            }
+          ],
+          "floorStyle": "onyx",
+          "floorMat": "runner",
+          "wallStyle": null,
+          "wallMat": null,
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r42": {
+          "id": "r42",
+          "kind": "corridor",
+          "name": "CORRIDOR-42",
+          "rects": [
+            {
+              "x1": -10,
+              "y1": -17,
+              "x2": -1,
+              "y2": -15
+            }
+          ],
+          "floorStyle": "onyx",
+          "floorMat": "runner",
+          "wallStyle": null,
+          "wallMat": null,
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r44": {
+          "id": "r44",
+          "kind": "corridor",
+          "name": "CORRIDOR-44",
+          "rects": [
+            {
+              "x1": 18,
+              "y1": 25,
+              "x2": 27,
+              "y2": 27
+            }
+          ],
+          "floorStyle": "onyx",
+          "floorMat": "runner",
+          "wallStyle": null,
+          "wallMat": null,
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r46": {
+          "id": "r46",
+          "kind": "corridor",
+          "name": "CORRIDOR-46",
+          "rects": [
+            {
+              "x1": 7,
+              "y1": -31,
+              "x2": 10,
+              "y2": -22
+            }
+          ],
+          "floorStyle": "onyx",
+          "floorMat": "runner",
+          "wallStyle": null,
+          "wallMat": null,
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r49": {
+          "id": "r49",
           "kind": "hab",
-          "name": "INVESTIGACIÓN",
+          "name": "RESEARCH",
           "rects": [
             {
               "x1": 28,
@@ -816,8 +1317,8 @@
           "tier": 0,
           "floorPaint": {}
         },
-        "r53": {
-          "id": "r53",
+        "r64": {
+          "id": "r64",
           "kind": "hab",
           "name": "QA",
           "rects": [
@@ -837,8 +1338,8 @@
           "tier": 0,
           "floorPaint": {}
         },
-        "r68": {
-          "id": "r68",
+        "r79": {
+          "id": "r79",
           "kind": "hab",
           "name": "SEO",
           "rects": [
@@ -858,8 +1359,8 @@
           "tier": 0,
           "floorPaint": {}
         },
-        "r83": {
-          "id": "r83",
+        "r94": {
+          "id": "r94",
           "kind": "factory",
           "name": "DESARROLLO WEB",
           "rects": [
@@ -874,6 +1375,111 @@
           "floorMat": "tread",
           "wallStyle": null,
           "wallMat": "pipework",
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r107": {
+          "id": "r107",
+          "kind": "hab",
+          "name": "CUMPLIMIENTO",
+          "rects": [
+            {
+              "x1": 28,
+              "y1": -21,
+              "x2": 45,
+              "y2": -11
+            }
+          ],
+          "floorStyle": "ash",
+          "floorMat": "resin",
+          "wallStyle": null,
+          "wallMat": "panelled",
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r122": {
+          "id": "r122",
+          "kind": "hab",
+          "name": "ALIANZAS",
+          "rects": [
+            {
+              "x1": -28,
+              "y1": 21,
+              "x2": -11,
+              "y2": 31
+            }
+          ],
+          "floorStyle": "ash",
+          "floorMat": "resin",
+          "wallStyle": null,
+          "wallMat": "panelled",
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r137": {
+          "id": "r137",
+          "kind": "hab",
+          "name": "DATOS Y ANALÍTICA",
+          "rects": [
+            {
+              "x1": -28,
+              "y1": -21,
+              "x2": -11,
+              "y2": -11
+            }
+          ],
+          "floorStyle": "ash",
+          "floorMat": "resin",
+          "wallStyle": null,
+          "wallMat": "panelled",
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r152": {
+          "id": "r152",
+          "kind": "hab",
+          "name": "REDES Y DISTRIBUCIÓN",
+          "rects": [
+            {
+              "x1": 28,
+              "y1": 21,
+              "x2": 45,
+              "y2": 31
+            }
+          ],
+          "floorStyle": "ash",
+          "floorMat": "resin",
+          "wallStyle": null,
+          "wallMat": "panelled",
+          "hullStyle": null,
+          "hullMat": null,
+          "tier": 0,
+          "floorPaint": {}
+        },
+        "r167": {
+          "id": "r167",
+          "kind": "hab",
+          "name": "DISEÑO",
+          "rects": [
+            {
+              "x1": 0,
+              "y1": -42,
+              "x2": 17,
+              "y2": -32
+            }
+          ],
+          "floorStyle": "ash",
+          "floorMat": "resin",
+          "wallStyle": null,
+          "wallMat": "panelled",
           "hullStyle": null,
           "hullMat": null,
           "tier": 0,
@@ -895,9 +1501,19 @@
         "r36",
         "r37",
         "r38",
-        "r53",
-        "r68",
-        "r83"
+        "r40",
+        "r42",
+        "r44",
+        "r46",
+        "r49",
+        "r64",
+        "r79",
+        "r94",
+        "r107",
+        "r122",
+        "r137",
+        "r152",
+        "r167"
       ],
       "props": [
         {
@@ -1105,6 +1721,54 @@
         },
         {
           "id": "p39",
+          "t": "industrial_planter",
+          "x": 23,
+          "y": -15,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p41",
+          "t": "industrial_planter",
+          "x": -5,
+          "y": 27,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p43",
+          "t": "industrial_planter",
+          "x": -5,
+          "y": -15,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p45",
+          "t": "industrial_planter",
+          "x": 23,
+          "y": 27,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p47",
+          "t": "tallplant",
+          "x": 7,
+          "y": -26,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p48",
+          "t": "tallplant",
+          "x": 10,
+          "y": -26,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p50",
           "t": "whiteboard",
           "x": 38,
           "y": -2,
@@ -1113,7 +1777,7 @@
           "block": false
         },
         {
-          "id": "p40",
+          "id": "p51",
           "t": "bookshelf",
           "x": 29,
           "y": -2,
@@ -1121,7 +1785,7 @@
           "h": 1
         },
         {
-          "id": "p41",
+          "id": "p52",
           "t": "industrial_drawerbank",
           "x": 48,
           "y": -2,
@@ -1129,7 +1793,7 @@
           "h": 1
         },
         {
-          "id": "p42",
+          "id": "p53",
           "t": "desk",
           "x": 34,
           "y": 4,
@@ -1138,7 +1802,7 @@
           "agentId": "lupa"
         },
         {
-          "id": "p43",
+          "id": "p54",
           "t": "desk",
           "x": 38,
           "y": 4,
@@ -1147,7 +1811,7 @@
           "agentId": "vigia"
         },
         {
-          "id": "p44",
+          "id": "p55",
           "t": "desk",
           "x": 42,
           "y": 4,
@@ -1156,7 +1820,7 @@
           "agentId": "radar"
         },
         {
-          "id": "p45",
+          "id": "p56",
           "t": "tallplant",
           "x": 28,
           "y": -2,
@@ -1164,7 +1828,7 @@
           "h": 1
         },
         {
-          "id": "p46",
+          "id": "p57",
           "t": "plant",
           "x": 51,
           "y": -2,
@@ -1173,7 +1837,7 @@
           "block": false
         },
         {
-          "id": "p47",
+          "id": "p58",
           "t": "plant",
           "x": 28,
           "y": 11,
@@ -1182,7 +1846,7 @@
           "block": false
         },
         {
-          "id": "p48",
+          "id": "p59",
           "t": "monstera",
           "x": 51,
           "y": 11,
@@ -1191,7 +1855,7 @@
           "block": false
         },
         {
-          "id": "p49",
+          "id": "p60",
           "t": "rack",
           "x": 28,
           "y": 6,
@@ -1199,7 +1863,7 @@
           "h": 1
         },
         {
-          "id": "p50",
+          "id": "p61",
           "t": "coffee",
           "x": 51,
           "y": 4,
@@ -1208,7 +1872,7 @@
           "block": false
         },
         {
-          "id": "p51",
+          "id": "p62",
           "t": "plant",
           "x": 28,
           "y": 7,
@@ -1217,7 +1881,7 @@
           "block": false
         },
         {
-          "id": "p52",
+          "id": "p63",
           "t": "bookstack",
           "x": 51,
           "y": 7,
@@ -1226,7 +1890,7 @@
           "block": false
         },
         {
-          "id": "p54",
+          "id": "p65",
           "t": "whiteboard",
           "x": -24,
           "y": -2,
@@ -1235,7 +1899,7 @@
           "block": false
         },
         {
-          "id": "p55",
+          "id": "p66",
           "t": "bookshelf",
           "x": -33,
           "y": -2,
@@ -1243,7 +1907,7 @@
           "h": 1
         },
         {
-          "id": "p56",
+          "id": "p67",
           "t": "industrial_drawerbank",
           "x": -14,
           "y": -2,
@@ -1251,7 +1915,7 @@
           "h": 1
         },
         {
-          "id": "p57",
+          "id": "p68",
           "t": "desk",
           "x": -28,
           "y": 4,
@@ -1260,7 +1924,7 @@
           "agentId": "corrector"
         },
         {
-          "id": "p58",
+          "id": "p69",
           "t": "desk",
           "x": -24,
           "y": 4,
@@ -1269,7 +1933,7 @@
           "agentId": "verificador"
         },
         {
-          "id": "p59",
+          "id": "p70",
           "t": "desk",
           "x": -20,
           "y": 4,
@@ -1278,7 +1942,7 @@
           "agentId": "voz"
         },
         {
-          "id": "p60",
+          "id": "p71",
           "t": "tallplant",
           "x": -34,
           "y": -2,
@@ -1286,7 +1950,7 @@
           "h": 1
         },
         {
-          "id": "p61",
+          "id": "p72",
           "t": "plant",
           "x": -11,
           "y": -2,
@@ -1295,7 +1959,7 @@
           "block": false
         },
         {
-          "id": "p62",
+          "id": "p73",
           "t": "plant",
           "x": -34,
           "y": 11,
@@ -1304,7 +1968,7 @@
           "block": false
         },
         {
-          "id": "p63",
+          "id": "p74",
           "t": "monstera",
           "x": -11,
           "y": 11,
@@ -1313,7 +1977,7 @@
           "block": false
         },
         {
-          "id": "p64",
+          "id": "p75",
           "t": "rack",
           "x": -34,
           "y": 4,
@@ -1321,7 +1985,7 @@
           "h": 1
         },
         {
-          "id": "p65",
+          "id": "p76",
           "t": "coffee",
           "x": -11,
           "y": 4,
@@ -1330,7 +1994,7 @@
           "block": false
         },
         {
-          "id": "p66",
+          "id": "p77",
           "t": "plant",
           "x": -34,
           "y": 7,
@@ -1339,7 +2003,7 @@
           "block": false
         },
         {
-          "id": "p67",
+          "id": "p78",
           "t": "bookstack",
           "x": -11,
           "y": 7,
@@ -1348,7 +2012,7 @@
           "block": false
         },
         {
-          "id": "p69",
+          "id": "p80",
           "t": "whiteboard",
           "x": 7,
           "y": -21,
@@ -1357,7 +2021,7 @@
           "block": false
         },
         {
-          "id": "p70",
+          "id": "p81",
           "t": "bookshelf",
           "x": 1,
           "y": -21,
@@ -1365,7 +2029,7 @@
           "h": 1
         },
         {
-          "id": "p71",
+          "id": "p82",
           "t": "industrial_drawerbank",
           "x": 14,
           "y": -21,
@@ -1373,7 +2037,7 @@
           "h": 1
         },
         {
-          "id": "p72",
+          "id": "p83",
           "t": "desk",
           "x": 3,
           "y": -18,
@@ -1382,7 +2046,7 @@
           "agentId": "ranking"
         },
         {
-          "id": "p73",
+          "id": "p84",
           "t": "desk",
           "x": 7,
           "y": -18,
@@ -1391,7 +2055,7 @@
           "agentId": "enlace"
         },
         {
-          "id": "p74",
+          "id": "p85",
           "t": "desk",
           "x": 11,
           "y": -18,
@@ -1399,7 +2063,7 @@
           "h": 1
         },
         {
-          "id": "p75",
+          "id": "p86",
           "t": "tallplant",
           "x": 0,
           "y": -21,
@@ -1407,7 +2071,7 @@
           "h": 1
         },
         {
-          "id": "p76",
+          "id": "p87",
           "t": "plant",
           "x": 17,
           "y": -21,
@@ -1416,7 +2080,7 @@
           "block": false
         },
         {
-          "id": "p77",
+          "id": "p88",
           "t": "plant",
           "x": 0,
           "y": -11,
@@ -1425,7 +2089,7 @@
           "block": false
         },
         {
-          "id": "p78",
+          "id": "p89",
           "t": "monstera",
           "x": 17,
           "y": -11,
@@ -1434,15 +2098,15 @@
           "block": false
         },
         {
-          "id": "p79",
+          "id": "p90",
           "t": "rack",
           "x": 0,
-          "y": -16,
+          "y": -14,
           "w": 2,
           "h": 1
         },
         {
-          "id": "p80",
+          "id": "p91",
           "t": "coffee",
           "x": 17,
           "y": -16,
@@ -1451,7 +2115,7 @@
           "block": false
         },
         {
-          "id": "p81",
+          "id": "p92",
           "t": "plant",
           "x": 0,
           "y": -13,
@@ -1460,7 +2124,7 @@
           "block": false
         },
         {
-          "id": "p82",
+          "id": "p93",
           "t": "bookstack",
           "x": 17,
           "y": -13,
@@ -1469,7 +2133,7 @@
           "block": false
         },
         {
-          "id": "p84",
+          "id": "p95",
           "t": "fabricator",
           "x": 7,
           "y": 30,
@@ -1477,7 +2141,7 @@
           "h": 2
         },
         {
-          "id": "p85",
+          "id": "p96",
           "t": "workbench",
           "x": 1,
           "y": 31,
@@ -1485,7 +2149,7 @@
           "h": 1
         },
         {
-          "id": "p86",
+          "id": "p97",
           "t": "toolbox",
           "x": 3,
           "y": 31,
@@ -1494,7 +2158,7 @@
           "block": false
         },
         {
-          "id": "p87",
+          "id": "p98",
           "t": "industrial_drawerbank",
           "x": 14,
           "y": 31,
@@ -1502,7 +2166,7 @@
           "h": 1
         },
         {
-          "id": "p88",
+          "id": "p99",
           "t": "bench",
           "x": 5,
           "y": 27,
@@ -1511,7 +2175,7 @@
           "agentId": "forja"
         },
         {
-          "id": "p89",
+          "id": "p100",
           "t": "industrial_supplycart",
           "x": 11,
           "y": 25,
@@ -1519,7 +2183,7 @@
           "h": 1
         },
         {
-          "id": "p90",
+          "id": "p101",
           "t": "industrial_toolcaddy",
           "x": 10,
           "y": 27,
@@ -1528,7 +2192,7 @@
           "block": false
         },
         {
-          "id": "p91",
+          "id": "p102",
           "t": "plant",
           "x": 0,
           "y": 21,
@@ -1537,7 +2201,7 @@
           "block": false
         },
         {
-          "id": "p92",
+          "id": "p103",
           "t": "crate",
           "x": 16,
           "y": 21,
@@ -1545,15 +2209,15 @@
           "h": 1
         },
         {
-          "id": "p93",
+          "id": "p104",
           "t": "rackV",
           "x": 0,
-          "y": 25,
+          "y": 23,
           "w": 1,
           "h": 2
         },
         {
-          "id": "p94",
+          "id": "p105",
           "t": "industrial_toolcaddy",
           "x": 17,
           "y": 26,
@@ -1562,7 +2226,7 @@
           "block": false
         },
         {
-          "id": "p95",
+          "id": "p106",
           "t": "rackV",
           "x": 0,
           "y": 28,
@@ -1570,7 +2234,613 @@
           "h": 2
         },
         {
-          "id": "p96",
+          "id": "p108",
+          "t": "whiteboard",
+          "x": 35,
+          "y": -21,
+          "w": 4,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p109",
+          "t": "bookshelf",
+          "x": 29,
+          "y": -21,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p110",
+          "t": "industrial_drawerbank",
+          "x": 42,
+          "y": -21,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "p111",
+          "t": "desk",
+          "x": 31,
+          "y": -17,
+          "w": 2,
+          "h": 1,
+          "agentId": "norma"
+        },
+        {
+          "id": "p112",
+          "t": "desk",
+          "x": 35,
+          "y": -17,
+          "w": 2,
+          "h": 1,
+          "agentId": "aviso"
+        },
+        {
+          "id": "p113",
+          "t": "desk",
+          "x": 39,
+          "y": -17,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p114",
+          "t": "tallplant",
+          "x": 28,
+          "y": -21,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p115",
+          "t": "plant",
+          "x": 45,
+          "y": -21,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p116",
+          "t": "plant",
+          "x": 28,
+          "y": -11,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p117",
+          "t": "monstera",
+          "x": 45,
+          "y": -11,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p118",
+          "t": "rack",
+          "x": 28,
+          "y": -14,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p119",
+          "t": "coffee",
+          "x": 45,
+          "y": -16,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p120",
+          "t": "plant",
+          "x": 28,
+          "y": -13,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p121",
+          "t": "bookstack",
+          "x": 45,
+          "y": -13,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p123",
+          "t": "whiteboard",
+          "x": -21,
+          "y": 21,
+          "w": 4,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p124",
+          "t": "bookshelf",
+          "x": -27,
+          "y": 21,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p125",
+          "t": "industrial_drawerbank",
+          "x": -14,
+          "y": 21,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "p126",
+          "t": "desk",
+          "x": -25,
+          "y": 25,
+          "w": 2,
+          "h": 1,
+          "agentId": "alianza"
+        },
+        {
+          "id": "p127",
+          "t": "desk",
+          "x": -21,
+          "y": 25,
+          "w": 2,
+          "h": 1,
+          "agentId": "vinculo"
+        },
+        {
+          "id": "p128",
+          "t": "desk",
+          "x": -17,
+          "y": 25,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p129",
+          "t": "tallplant",
+          "x": -28,
+          "y": 21,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p130",
+          "t": "plant",
+          "x": -11,
+          "y": 21,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p131",
+          "t": "plant",
+          "x": -28,
+          "y": 31,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p132",
+          "t": "monstera",
+          "x": -11,
+          "y": 31,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p133",
+          "t": "rack",
+          "x": -28,
+          "y": 26,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p134",
+          "t": "coffee",
+          "x": -11,
+          "y": 26,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p135",
+          "t": "plant",
+          "x": -28,
+          "y": 29,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p136",
+          "t": "bookstack",
+          "x": -11,
+          "y": 29,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p138",
+          "t": "whiteboard",
+          "x": -21,
+          "y": -21,
+          "w": 4,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p139",
+          "t": "bookshelf",
+          "x": -27,
+          "y": -21,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p140",
+          "t": "industrial_drawerbank",
+          "x": -14,
+          "y": -21,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "p141",
+          "t": "desk",
+          "x": -25,
+          "y": -17,
+          "w": 2,
+          "h": 1,
+          "agentId": "metrica"
+        },
+        {
+          "id": "p142",
+          "t": "desk",
+          "x": -21,
+          "y": -17,
+          "w": 2,
+          "h": 1,
+          "agentId": "embudo"
+        },
+        {
+          "id": "p143",
+          "t": "desk",
+          "x": -17,
+          "y": -17,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p144",
+          "t": "tallplant",
+          "x": -28,
+          "y": -21,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p145",
+          "t": "plant",
+          "x": -11,
+          "y": -21,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p146",
+          "t": "plant",
+          "x": -28,
+          "y": -11,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p147",
+          "t": "monstera",
+          "x": -11,
+          "y": -11,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p148",
+          "t": "rack",
+          "x": -28,
+          "y": -16,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p149",
+          "t": "coffee",
+          "x": -11,
+          "y": -16,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p150",
+          "t": "plant",
+          "x": -28,
+          "y": -13,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p151",
+          "t": "bookstack",
+          "x": -11,
+          "y": -13,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p153",
+          "t": "whiteboard",
+          "x": 35,
+          "y": 21,
+          "w": 4,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p154",
+          "t": "bookshelf",
+          "x": 29,
+          "y": 21,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p155",
+          "t": "industrial_drawerbank",
+          "x": 42,
+          "y": 21,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "p156",
+          "t": "desk",
+          "x": 31,
+          "y": 25,
+          "w": 2,
+          "h": 1,
+          "agentId": "altavoz"
+        },
+        {
+          "id": "p157",
+          "t": "desk",
+          "x": 35,
+          "y": 25,
+          "w": 2,
+          "h": 1,
+          "agentId": "boletin"
+        },
+        {
+          "id": "p158",
+          "t": "desk",
+          "x": 39,
+          "y": 25,
+          "w": 2,
+          "h": 1,
+          "agentId": "claqueta"
+        },
+        {
+          "id": "p159",
+          "t": "tallplant",
+          "x": 28,
+          "y": 21,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p160",
+          "t": "plant",
+          "x": 45,
+          "y": 21,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p161",
+          "t": "plant",
+          "x": 28,
+          "y": 31,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p162",
+          "t": "monstera",
+          "x": 45,
+          "y": 31,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p163",
+          "t": "rack",
+          "x": 28,
+          "y": 28,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p164",
+          "t": "coffee",
+          "x": 45,
+          "y": 26,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p165",
+          "t": "plant",
+          "x": 28,
+          "y": 29,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p166",
+          "t": "bookstack",
+          "x": 45,
+          "y": 29,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p168",
+          "t": "whiteboard",
+          "x": 7,
+          "y": -42,
+          "w": 4,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p169",
+          "t": "bookshelf",
+          "x": 1,
+          "y": -42,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p170",
+          "t": "industrial_drawerbank",
+          "x": 14,
+          "y": -42,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "p171",
+          "t": "desk",
+          "x": 3,
+          "y": -39,
+          "w": 2,
+          "h": 1,
+          "agentId": "trazo"
+        },
+        {
+          "id": "p172",
+          "t": "desk",
+          "x": 7,
+          "y": -39,
+          "w": 2,
+          "h": 1,
+          "agentId": "marca"
+        },
+        {
+          "id": "p173",
+          "t": "desk",
+          "x": 11,
+          "y": -39,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p174",
+          "t": "tallplant",
+          "x": 0,
+          "y": -42,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p175",
+          "t": "plant",
+          "x": 17,
+          "y": -42,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p176",
+          "t": "plant",
+          "x": 0,
+          "y": -32,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p177",
+          "t": "monstera",
+          "x": 17,
+          "y": -32,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p178",
+          "t": "rack",
+          "x": 0,
+          "y": -37,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "p179",
+          "t": "coffee",
+          "x": 17,
+          "y": -37,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p180",
+          "t": "plant",
+          "x": 0,
+          "y": -34,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p181",
+          "t": "bookstack",
+          "x": 17,
+          "y": -34,
+          "w": 1,
+          "h": 1,
+          "block": false
+        },
+        {
+          "id": "p182",
           "t": "desk",
           "x": 5,
           "y": 1,
@@ -1579,7 +2849,7 @@
           "agentId": "tablero"
         },
         {
-          "id": "p98",
+          "id": "p184",
           "t": "desk",
           "x": 29,
           "y": -1,
@@ -1588,7 +2858,7 @@
           "agentId": "sonda"
         },
         {
-          "id": "p99",
+          "id": "p185",
           "t": "comms_dish",
           "x": 31,
           "y": -1,
@@ -1596,7 +2866,7 @@
           "h": 2
         },
         {
-          "id": "p101",
+          "id": "p187",
           "t": "gigs_servercart",
           "x": 33,
           "y": -1,
@@ -1604,7 +2874,7 @@
           "h": 1
         },
         {
-          "id": "p103",
+          "id": "p189",
           "t": "connector_portal",
           "x": 34,
           "y": -1,
@@ -1613,7 +2883,7 @@
           "connectorId": "rea"
         },
         {
-          "id": "p105",
+          "id": "p191",
           "t": "desk",
           "x": -33,
           "y": -1,
@@ -1622,7 +2892,7 @@
           "agentId": "cierre"
         },
         {
-          "id": "p106",
+          "id": "p192",
           "t": "comms_dish",
           "x": -31,
           "y": -1,
@@ -1630,7 +2900,7 @@
           "h": 2
         },
         {
-          "id": "p108",
+          "id": "p194",
           "t": "comms_dish",
           "x": 1,
           "y": -20,
@@ -1638,7 +2908,7 @@
           "h": 2
         },
         {
-          "id": "p109",
+          "id": "p195",
           "t": "desk",
           "x": 0,
           "y": 22,
@@ -1647,7 +2917,7 @@
           "agentId": "prensa"
         },
         {
-          "id": "p110",
+          "id": "p196",
           "t": "rack",
           "x": 2,
           "y": 22,
@@ -1655,10 +2925,66 @@
           "h": 1
         },
         {
-          "id": "p111",
+          "id": "p197",
           "t": "comms_dish",
           "x": 4,
           "y": 22,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p199",
+          "t": "comms_dish",
+          "x": 29,
+          "y": -20,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p201",
+          "t": "comms_dish",
+          "x": -27,
+          "y": 22,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p203",
+          "t": "comms_dish",
+          "x": -27,
+          "y": -20,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p205",
+          "t": "gigs_servercart",
+          "x": -25,
+          "y": -20,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "p207",
+          "t": "comms_dish",
+          "x": 29,
+          "y": 22,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p209",
+          "t": "comms_dish",
+          "x": 1,
+          "y": -41,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "p210",
+          "t": "studio",
+          "x": 3,
+          "y": -41,
           "w": 2,
           "h": 2
         }
