@@ -127,5 +127,5 @@ Primer departamento configurado a partir del cuestionario del Commander ("Cuesti
 - **VIGÍA** (sonnet): vigila las 9 casas con permiso SEGOB (18 reseñas y `/bonos/`), revisión semanal. Comprueba que sale por IP de México antes de empezar, compara lo publicado en TC con la ficha de cada promoción y entrega `informes/vigilancia-AAAA-MM-DD.csv` y `.md` en su carpeta de trabajo, con evidencia en PDF. Solo páginas públicas; no edita el sitio.
 - **PAUTA** (opus): recibe el informe primero, lo filtra y sube al Commander solo lo que requiere su decisión.
 - NORMA entra si el cambio toca el permiso SEGOB; AVISO si el texto propuesto menciona un bono.
-- Pendiente: conectores de Drive (hoja de seguimiento en TC Management) y Slack (canal privado de avisos urgentes); que Desarrollo web aplique los cambios aprobados vía WordPress; ejecución programada (hoy se lanza a mano).
+- Pendiente: conectores de Drive (hoja de seguimiento en TC Management) y Slack (canal `#research-tc-20` para avisos urgentes); que Desarrollo web aplique los cambios aprobados vía WordPress; ejecución programada (hoy se lanza a mano).
 - Las instrucciones viven en el seed (`dev/fixtures/tc-offices/`); `/home/claude/scratch` no se versiona.
