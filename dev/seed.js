@@ -74,6 +74,16 @@ function loadEnvDev() {
 // reconcile against any stale localStorage left over from a previous session on the same port.
 function materializeWorkspace(model) {
   if (!KEEP && fs.existsSync(SCRATCH)) fs.rmSync(SCRATCH, { recursive: true, force: true });
+  // A fresh seed deletes the folder that the Safe Cell containers mount, so a container from the previous run
+  // would keep pointing at the deleted folder and fail its startup probe. Remove the station's own containers
+  // (label ai.starnet.managed=1) so the next run recreates them. No Docker: nothing to do.
+  if (!KEEP) {
+    try {
+      const cp = require('child_process');
+      const ids = cp.execFileSync('docker', ['ps', '-aq', '--filter', 'label=ai.starnet.managed=1'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 15000 }).trim().split(/\s+/).filter(Boolean);
+      if (ids.length) { cp.execFileSync('docker', ['rm', '-f'].concat(ids), { stdio: 'ignore', timeout: 30000 }); console.log('   docker    : ' + ids.length + ' contenedor(es) de la sesión anterior eliminados'); }
+    } catch (_) { /* Docker not installed or not running */ }
+  }
   fs.mkdirSync(SCRATCH, { recursive: true });
   // --keep must actually KEEP the previous session's state. The old unconditional cpSync overwrote
   // agent.save.json/agent.roster.json from the fixture on EVERY relaunch — and the boot reconcile is
