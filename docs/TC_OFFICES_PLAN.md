@@ -129,3 +129,17 @@ Primer departamento configurado a partir del cuestionario del Commander ("Cuesti
 - NORMA entra si el cambio toca el permiso SEGOB; AVISO si el texto propuesto menciona un bono.
 - Pendiente: conectores de Drive (hoja de seguimiento en TC Management) y Slack (canal `#research-tc-20` para avisos urgentes); que Desarrollo web aplique los cambios aprobados vía WordPress; ejecución programada (hoy se lanza a mano).
 - Las instrucciones viven en el seed (`dev/fixtures/tc-offices/`); `/home/claude/scratch` no se versiona.
+
+### Research Piso 1 y apoyo técnico configurados (2026-11-17)
+
+Respuestas de Andrés en el cuestionario: solo México; competencia vigilada solo Legalbet México e igaming.bet;
+Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, propuestas de Claude aceptadas.
+
+- **RADAR** (sonnet): informe `informes/radar-AAAA-MM-DD.md` con 5 a 10 oportunidades priorizadas, a PAUTA.
+- **LUPA** (sonnet): un brief por tema aprobado en `briefs/AAAA-MM-DD-slug.md` (orden del Template de Entrega v3),
+  escritor sugerido orientativo, anticanibalización con la API pública de WordPress (`/wp-json/wp/v2/posts|pages?search=`).
+- **SONDA** (sonnet): solo por encargo; apps de las casas con permiso SEGOB y herramientas de la competencia.
+- **PAUTA**: recibe RADAR, pide briefs a LUPA y sube al Commander solo la lista final.
+- Sin cifras de volumen mientras no haya Search Console, Ubersuggest ni Ahrefs conectados ("sin dato").
+- Pendiente: conector de Search Console (requiere cliente OAuth de Google y añadir Search Console al
+  transporte de Google), Drive para guardar briefs como Google Doc, y la rutina de los lunes para RADAR.
