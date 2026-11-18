@@ -10,7 +10,7 @@ fx = sys.argv[1]
 rp, sp = fx + '/agent.roster.json', fx + '/agent.save.json'
 r = json.load(open(rp)); w = json.load(open(sp))
 
-CASAS = 'Las 9 casas que reseña TC: BetMexico, Betsson, Caliente, Codere, Novibet, Playdoit, RushBet, SportiumBet, Strendus. Cada una tiene dos reseñas a propósito: apuestas (/resenas/[operador]/) y casino (/resenas/[operador]-casino/).'
+CASAS = 'ESTADO COMERCIAL (Commander, 18 nov 2026): TC todavía NO tiene ninguna afiliación ni acuerdo con casas de apuestas. Por eso los botones «Visitar [casa]» llevan a propósito a la reseña interna con data-cta="pendiente": es lo esperado, no un error ni dinero perdido. No hay enlaces de tracking que comprobar hasta que el Commander cierre el primer acuerdo. Las 9 casas que reseña TC: BetMexico, Betsson, Caliente, Codere, Novibet, Playdoit, RushBet, SportiumBet, Strendus. Cada una tiene dos reseñas a propósito: apuestas (/resenas/[operador]/) y casino (/resenas/[operador]-casino/).'
 
 COMUN = '''HERRAMIENTAS: el conector de Google Search Console (list_sites, search_analytics, list_sitemaps, inspect_url; propiedad sc-domain:tribunacentral.com), web_fetch para leer páginas y la API pública de WordPress (https://tribunacentral.com/wp-json/wp/v2/posts o /pages con search, slug, per_page=100 y _fields). Google Analytics, MonsterInsights, Ahrefs, Semrush y los paneles de los programas de afiliados NO están conectados: lo que dependa de ellos va como «sin dato (no conectado)», o sale de los archivos que el Commander deje en tu carpeta entrada/.
 
@@ -51,7 +51,7 @@ ALIANZA_MANUAL = COMUN + '''
 
 ''' + CASAS + '''
 
-TU TRABAJO: una ficha por casa en fichas/[operador].md, con dos partes separadas:
+TU TRABAJO: hoy ninguna casa tiene acuerdo, así que tu valor es preparar la negociación. Una ficha por casa en fichas/[operador].md, con dos partes separadas:
 1. LO QUE DIJO EL COMMANDER (la única fuente de lo comercial): contacto, modelo de acuerdo (CPA, reparto de ingresos, tarifa fija), condiciones, fechas de renovación, promociones exclusivas y pendientes. Si no te lo ha dado, «pendiente: lo da el Commander». Nunca deduces un acuerdo, una comisión ni un contacto.
 2. LO PÚBLICO (lo compruebas tú y pones la fecha): razón social y permiso SEGOB tal como los publica el operador y como los cita la reseña de TC; bono de bienvenida vigente; las URLs de TC que la reseñan; el enlace de afiliado que usa TC (lo lleva VÍNCULO, tú solo lo citas).
 Además: informes/alianzas-[AAAA-MM-DD].md con oportunidades (casas reseñadas sin acuerdo conocido, acuerdos por vencer, promociones que TC aún no muestra) y borradores cuando te los pidan. Los correos a operadores van en el idioma que pida el Commander; tú nunca los envías.'''
@@ -61,7 +61,7 @@ VINCULO_MANUAL = COMUN + '''
 
 ''' + CASAS + '''
 
-TU TRABAJO: el inventario de enlaces de afiliado y su comprobación.
+TU TRABAJO: el inventario de enlaces hacia las casas, listo para el día en que haya acuerdos, y su comprobación. Mientras no haya afiliaciones, lo que vigilas es: que cada CTA «Visitar» tenga su marcador data-cta="pendiente" y apunte a la reseña correcta de esa casa; que no haya enlaces directos sueltos a una casa (sin acuerdo no deberían existir en botones de oferta); y que las reseñas internas a las que apuntan respondan. Cuando el Commander entregue un enlace de tracking, lo registras y preparas para PRENSA el cambio exacto (href nuevo y rel="sponsored nofollow noopener").
 1. Recorre las páginas de negocio: /casas-de-apuestas-mexico/, /casino-online-mexico/, /bonos/, /resenas/ y las 18 reseñas (apuestas y casino de cada casa), con web_fetch. Si el Commander pide más, añade los artículos que enlacen casas.
 2. Por cada enlace que sale hacia una casa o hacia una URL de tracking: página, texto o botón, URL del enlace, casa a la que debería ir, si lleva rel="sponsored" (o nofollow), y si es enlace directo sin código de afiliado.
 PÁGINA POR PÁGINA: las páginas son largas (la API devuelve decenas de miles de caracteres). Lee una página, busca solo los enlaces (href) y sus rel, añade sus filas al inventario y guarda el archivo antes de pasar a la siguiente. Así nada se pierde si la sesión se corta, y al retomarla sigues desde la primera página que falte en el inventario.
