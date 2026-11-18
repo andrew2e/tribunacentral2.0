@@ -215,3 +215,13 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - `config_seo.py` regenera ambos manuales.
 - **Candado de contenido externo (taint):** cuando una tarea ya leyó contenido de fuera (web o un conector), cada llamada nueva a un conector pide confirmación aunque haya ALWAYS (diseño de seguridad de StarNet contra inyecciones). Decisión del Commander (18 nov): las lecturas de Search Console quedan exentas (`sidecar/taint.js`), porque es el adaptador local del host con OAuth `webmasters.readonly`. El id `google-search-console` queda reservado a esa URL. Drive, Trello y el resto siguen igual.
 - **SEO probado (18 nov):** RANKING entregó `ranking/informes/auditoria-gsc-2026-11-18.md` por API. Cifras cuadran con la auditoría por navegador del mismo día (6 vs 7 clics, 138 vs 135 impresiones, posición 39.1, 528 en 3 meses). Ajustes: WordPress con web_fetch; las dos reseñas por operador (apuestas y casino) no son duplicado.
+
+## Desarrollo web, Datos y Alianzas configurados (18 nov 2026, noche)
+
+- **Regla común nueva** en SEO, Desarrollo, Datos y Alianzas: web_fetch y nunca web_request; nada de shell.exec, code.run ni verify.run (cada uso pide aprobación tras leer contenido externo). Con eso las pruebas corrieron sin un solo clic del Commander.
+- **FORJA** (`forja/informes/forja-indexacion-2026-11-18.md`): las 5 URLs sin indexar están técnicamente bien; 27 categorías noindex y «Ver todo» del blog hacia ellas; /blog-y-noticias/ sin paginación; lastmod masivo (38 de 197 hoy); muro 403 a navegador sin cabeza (posible riesgo para Googlebot, sin confirmar). 3 cards para Arturo listas.
+- **PRENSA** (`prensa/informes/prensa-enlaces-cluster-nfl-2026-11-18.md`): paquete de 4 cambios del cluster NFL con texto actual exacto, widget de Elementor, texto nuevo, reversión y purga de caché. Sin conector de escritura a WordPress: aplica el Commander o Arturo.
+- **MÉTRICA** (`metrica/informes/pulso-2026-11-18.md`): pulso semanal por API; cuadra con RANKING. Resumen en inglés para #seo-internal.
+- **VÍNCULO**: hallazgo de negocio: los botones «Visitar [casa]» de /bonos/ llevan a la reseña interna con `data-cta="pendiente"` y `rel="nofollow"`; ningún enlace de afiliado externo encontrado. Inventario en `vinculo/inventario/enlaces-afiliado.md` (se completa página por página).
+- **EMBUDO** y **ALIANZA**: configurados, sin prueba. EMBUDO necesita enlaces de afiliado reales o reportes de afiliados en `entrada/`; ALIANZA necesita los datos comerciales del Commander.
+- **Pendiente de decisión del Commander**: conector de escritura a WordPress para PRENSA (recomendado: usuario «TC Offices» con rol Editor y contraseña de aplicación, nunca administrador).
