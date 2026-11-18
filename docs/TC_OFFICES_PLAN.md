@@ -206,3 +206,10 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - Prueba real: entrega de Micaela «Pilotos mexicanos en la F1» (card en Listo para WP). CIERRE leyó el doc por Drive, pidió el brief a TABLERO y repartió a CORRECTOR, VERIFICADOR y VOZ. Informe: `cierre/informes/qa-micaela-pilotos-mexicanos-f1-2026-11-18.md`. Veredicto CMayor con 11 puntos, errores de hecho verificados con fuente (Rebaque, Le Mans 1968, subcampeonatos), y corrección de dos revisores que no vieron los enlaces en el texto plano (CIERRE lo comprobó en HTML). ~12 min.
 - Ajustes tras la prueba: CIERRE firma como CIERRE, nombre fijo del informe y cabecera literal «QA Editor - CMayor|CMenor (fecha)».
 - Primera vez cada agente pide ALWAYS para Drive y Trello; después no.
+
+## SEO configurado (18 nov 2026)
+
+- Conector nuevo `google-search-console` (catálogo + adaptador local `transport.google.js`, scope `webmasters.readonly`): `list_sites`, `search_analytics`, `list_sitemaps`, `inspect_url`. Mismo cliente interno de Google que Drive.
+- **RANKING**: auditoría GSC por API siguiendo la skill `auditoria-gsc` (ventanas, cruces, plan P0/P1/P2, KPIs). Lo que la API no da (informe de indexación completo, rastreo, enlaces, CWV) va como «sin dato por API». Informe en español claro + resumen en inglés para #seo-internal (Slack no conectado).
+- **ENLACE**: on-page con API de WordPress (`yoast_head_json`) y GSC; canibalización por consulta+página; enlazado interno con anclas exactas. No propone redirecciones de money pages (en espera por la v2).
+- `config_seo.py` regenera ambos manuales.
