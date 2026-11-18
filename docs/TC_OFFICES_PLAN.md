@@ -156,3 +156,13 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
   agente. Abrir cada agente desde su ficha de la tripulación.
 - Pendiente: modo de aprobación de RADAR, LUPA, VIGÍA y PAUTA (hoy piden permiso para cada escritura y cada clic del
   navegador; la rutina del lunes se quedará esperando), conector de Search Console, Drive para los briefs, Slack #research-tc-20.
+
+### VIGÍA: las 9 casas revisadas (2026-11-18)
+
+- Siete casas el 18 nov con VPN a México (BetMexico y Betsson el 16). Resumen de decisiones en el doc del proyecto
+  `claude/vigilancia-semanal-2026-11-18.md`.
+- Aprendido: una sesión por casa. Con Caliente y Codere en la misma sesión, el contexto se compactó y VIGÍA releyó
+  páginas (Codere: 15 min y 149 llamadas). Con sesión nueva y notas en `notas/`, cada casa tarda 5 a 10 min.
+- Novibet bloquea con Cloudflare: necesita PDF manuales. Codere: términos generales cargan con JavaScript.
+- Orden para regenerar el seed: `config_piso2.py`, `config_piso1.py`, `config_cumplimiento.py` (cada uno reescribe su
+  sección del manual de PAUTA).
