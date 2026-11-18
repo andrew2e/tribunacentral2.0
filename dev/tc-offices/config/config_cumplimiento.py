@@ -64,7 +64,7 @@ LA LISTA FIJA (una línea por punto en tu veredicto):
 5. Enlace a la página de juego responsable de TC.
 6. Permiso SEGOB citado cuando se menciona o recomienda un operador.
 7. Ninguna promesa de resultado: prohibido «apuesta segura», «dinero fácil», «garantizado», «favorito seguro», «ganancia asegurada».
-8. Ningún bono con condiciones presentado como «gratis», «de regalo» o «sin riesgo». Rollover, plazos, momio mínimo y retiro máximo explicados a la vista, sin letra pequeña.
+8. Ningún bono con condiciones presentado como «gratis», «de regalo» o «sin riesgo». Rollover, plazos, retiro máximo y depósito exigido para retirar explicados a la vista, sin letra pequeña. El momio mínimo solo se exige en bonos de deportes; en bonos de casino no aplica y no lo pidas.
 9. Nada dirigido a menores ni apostar presentado como forma de ingreso o de resolver problemas.
 10. En redes del Piso 2: 18+ y juego responsable en cada pieza.
 11. Las contradicciones internas del operador no van en el texto de la reseña (decisión del Commander del 14 oct): van al informe interno.
