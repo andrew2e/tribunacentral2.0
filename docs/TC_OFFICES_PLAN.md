@@ -182,3 +182,10 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - **Drive**: los conectores de Google de esta base están cerrados hasta que exista un registro OAuth propio
   (`sidecar/mcp/google-client.js`, `RELEASE_DEFERRED`). Pendiente: crear un cliente OAuth de escritorio en Google Cloud
   para TC y habilitar Drive y Search Console en el fork.
+
+## Redacción y Cumplimiento probados (18 nov 2026)
+
+- **TABLERO** leyó el board real (169 cards) y entregó `informes/tablero-2026-11-18.md`. Dos lecciones: (1) el conector stdio de Trello exige que TABLERO esté en Safe Cell **también en el roster** (corregido en `config_redaccion.py`); (2) pulsar **FULL ACCESS** en un agente con conector stdio (TABLERO, SONDA) lo fuerza al backend local (`forceLocalForAgent`) y el conector cae con "requires Safe Cell". Usar ALWAYS. Para recuperarlo: `App.applyConfig({approvalMode:'ask',executionProfile:'safe-cell'},'tablero')` y `POST /api/connectors/refresh {id:'trello'}`.
+- El proceso stdio se recicla a los 15 min sin uso; si el arranque perezoso se cuelga en CONNECTING, forzar `POST /api/connectors/refresh`.
+- **AVISO** revisó los textos de VIGÍA para el bono de casino de Playdoit: `aviso/informes/aviso-2026-11-18-playdoit-casino-bono.md` (Aprobado con cambios). Ajuste: no exigir momio mínimo en bonos de casino.
+- **NORMA** revisó Codere y Betsson: `norma/informes/permisos-2026-11-18.md`. Permisos base confirmados; oficios distintos entre operador y TC; el listado de la SEGOB no cargó. Lista de permisos registrados actualizada.

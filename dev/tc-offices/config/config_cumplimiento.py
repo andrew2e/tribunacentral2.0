@@ -8,9 +8,9 @@ AYUDA = 'Línea de la Vida 800 911 2000 (gratuita, confidencial, 24 horas; Gobie
 
 PERMISOS = '''PERMISOS REGISTRADOS POR TC (verificados en el sitio de cada operador el 5 oct 2026; actualízalos con lo que veas):
 - BetMexico: DGAJS/SCEVF/P-06/2005-TER (oficio DGJS/DCRCA/2772/2021)
-- Betsson: DGG/723/97 (DGJS/DCRCA/0688/2021; la ficha de deportes añade DGJS/DCRCA/1381/2022, visto el 16 nov)
+- Betsson: DGG/723/97 (DGJS/DCRCA/0688/2021; el pie cita además DGJS/1476/2015, de Operadora de Entretenimiento del Bajío, visto el 18 nov; DGJS/DCRCA/1381/2022 visto en la ficha de deportes el 16 nov y no visto en el pie el 18 nov)
 - Caliente: DGG/SP/404/97
-- Codere: DGG/SP/442/97 (el pie del sitio cita además DGJS/DGAAD/DCRCA/1566/2018, DGJS/1018/2015 y DGJS/234/2019, visto el 18 nov; la reseña de TC cita DGJS/1680/2025 y DGJS/0757/2025, a contrastar)
+- Codere: DGG/SP/442/97 (el pie del sitio cita además DGJS/DGAAD/DCRCA/1566/2018, DGJS/1018/2015 y DGJS/234/2019, visto el 18 nov; la tabla Licencia añade DGJS/1427/2023 y la línea breve DGJS/1680/2025, vistos el 18 nov; DGJS/0757/2025 solo aparece en la reseña de TC, sin confirmar)
 - Novibet: DGG/723/97 (DGJS/DCRCA/1121/2020)
 - Playdoit: DGJS/DCRCA/P-01/2021
 - RushBet: DGJS/DGAAD/DCRCA/P-03/2018 (DGJS/3059/2021)
