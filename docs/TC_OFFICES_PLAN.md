@@ -143,3 +143,16 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - Sin cifras de volumen mientras no haya Search Console, Ubersuggest ni Ahrefs conectados ("sin dato").
 - Pendiente: conector de Search Console (requiere cliente OAuth de Google y añadir Search Console al
   transporte de Google), Drive para guardar briefs como Google Doc, y la rutina de los lunes para RADAR.
+
+### Research probado de punta a punta (2026-11-18)
+
+- Ciclo completo PAUTA → RADAR → LUPA → PAUTA probado en la oficina en marcha: informe `radar/informes/radar-2026-11-18.md`,
+  briefs `lupa/briefs/liguilla-apertura-2026-cuartos-cruces-momios.md` y `lupa/briefs/codigo-promocional-playdoit.md`,
+  propuesta `agent/ciclo/propuesta-ciclo-2026-11-18.md`.
+- PAUTA ya tiene los territorios de los escritores en su manual.
+- Rutina creada: RADAR cada lunes a las 9:00 (Europe/Madrid). Solo corre con la Mac encendida y la oficina abierta.
+- VIGÍA comprueba la IP antes de empezar y se detiene si no es de México (probado: sin VPN se detuvo).
+- Aprendido: cambiar el agente enfocado desde la consola (App.selectAgent) deja la sesión abierta con la identidad de otro
+  agente. Abrir cada agente desde su ficha de la tripulación.
+- Pendiente: modo de aprobación de RADAR, LUPA, VIGÍA y PAUTA (hoy piden permiso para cada escritura y cada clic del
+  navegador; la rutina del lunes se quedará esperando), conector de Search Console, Drive para los briefs, Slack #research-tc-20.
