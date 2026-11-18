@@ -6432,6 +6432,9 @@ const connectorOauthFetcher = makeConnectorOauthFetch({
   assertResolvedSafe: skillWebInternals.assertResolvedSafe,
   lookup: host => dns.promises.lookup(host, { all: true }),
   agentFactory: options => new (require('undici').Agent)(options),
+  // Same undici for fetch and Agent (as web.js does): Node 24's built-in fetch bundles undici 7, whose dispatcher
+  // API rejects an undici 6 Agent, so every pinned OAuth leg (Google code exchange included) died as "fetch failed".
+  fetchImpl: (url, init) => require('undici').fetch(url, init),
   onCloseError: e => failNote('connector.oauth.dispatcher-close', e)
 });
 async function connectorOauthFetch(raw, options) { return connectorOauthFetcher.connectorOauthFetch(raw, options); }
