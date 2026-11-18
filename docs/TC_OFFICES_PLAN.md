@@ -166,3 +166,19 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - Novibet bloquea con Cloudflare: necesita PDF manuales. Codere: términos generales cargan con JavaScript.
 - Orden para regenerar el seed: `dev/tc-offices/config/config_piso2.py`, `config_piso1.py`, `config_cumplimiento.py` (argumento: `dev/fixtures/tc-offices`) (cada uno reescribe su
   sección del manual de PAUTA).
+
+### Redacción configurada (2026-11-18)
+
+- **PAUTA** (opus): manual reescrito con el procedimiento de tandas de la skill `asignaciones-editoriales-tc` (v6),
+  reparto de escritores vigente desde la asignación de mitad de octubre, formato de fila del Plan Editorial, flujo del
+  board y límites. Las secciones de Research y Cumplimiento se añaden detrás (orden de scripts: `config_redaccion.py`,
+  `config_piso2.py`, `config_piso1.py`, `config_cumplimiento.py`).
+- **TABLERO** (sonnet, perfil SAFE CELL): diagnóstico del board TC Posts Main Control (conteos, atascadas, vencidas,
+  desfases con WordPress, carga por escritor) y propuesta de cambios; crea cards solo con aprobación; no asigna miembros.
+- **Trello**: conector stdio `atlassian-trello-mcp@1.4.0` (MIT, paquete de terceros) para TABLERO, en solo lectura por
+  defecto (`TRELLO_READ_ONLY=true`). Conexión: generar API key y token en https://trello.com/app-key (los genera
+  Andrés), y en Terminal, con la oficina y Docker abiertos:
+  `TRELLO_API_KEY=... TRELLO_TOKEN=... node dev/tc-connect-trello.mjs` (`--write` para permitir crear y mover cards).
+- **Drive**: los conectores de Google de esta base están cerrados hasta que exista un registro OAuth propio
+  (`sidecar/mcp/google-client.js`, `RELEASE_DEFERRED`). Pendiente: crear un cliente OAuth de escritorio en Google Cloud
+  para TC y habilitar Drive y Search Console en el fork.

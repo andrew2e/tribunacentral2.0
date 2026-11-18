@@ -1,0 +1,11 @@
+{
+  "id": "trello",
+  "label": "Trello",
+  "transport": "stdio",
+  "agentId": "tablero",
+  "command": "npx",
+  "args": ["-y", "atlassian-trello-mcp@1.4.0"],
+  "env": {
+    "TRELLO_READ_ONLY": "true"
+  }
+}
