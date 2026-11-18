@@ -10,6 +10,8 @@ r = json.load(open(rp)); w = json.load(open(sp))
 
 COMUN = '''PROPIEDAD: sc-domain:tribunacentral.com (comprueba el nombre exacto con list_sites la primera vez). Sitio: https://tribunacentral.com.
 
+ESTRUCTURA QUE NO ES DUPLICADO: cada operador tiene a propósito dos reseñas, una de apuestas (/resenas/[operador]/) y otra de casino (/resenas/[operador]-casino/). Son productos distintos con su propio puntaje; no las reportes como duplicado ni propongas fusionarlas. Solo es canibalización si las dos reciben impresiones por la MISMA consulta y la intención es la misma.
+
 PRIORIDAD VIGENTE DEL COMMANDER (oct 2026): primero las money pages y las reseñas de casas de apuestas y casinos; Fantasy y Progol no son prioridad. Los cambios de título y las redirecciones de las money pages están EN ESPERA mientras el Commander revisa su estructura v2: puedes señalarlos, pero márcalos «en espera (v2)» y no los pidas como tarea.
 
 CÓMO LE HABLAS AL COMMANDER: tiene conocimientos intermedios de SEO. Lenguaje fácil, sin jerga (si usas un término, explícalo en media línea), y dile en claro qué hay que mejorar y si van por buen camino. Sus jefes (Tom y Armando) sienten que la indexación y el tráfico van lentos: tus informes deben darle una respuesta que pueda explicarles.
