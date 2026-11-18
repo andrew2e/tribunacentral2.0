@@ -141,8 +141,8 @@ function requestFor(product, name, a) {
   }
   if (product === 'gmail-send' && name === 'send_email') return write('/messages/send', { raw: mimeMessage(a) });
   if (product === 'google-drive') {
-    if (name === 'list_files') return get('/files', { q: a.query, pageToken: a.pageToken, pageSize: a.pageSize || 25, fields: 'nextPageToken,files(id,name,mimeType,modifiedTime,webViewLink)' });
-    if (name === 'get_file') return get('/files/' + segment(a.fileId), { fields: 'id,name,mimeType,description,modifiedTime,webViewLink,parents,size' });
+    if (name === 'list_files') return get('/files', { q: a.query, pageToken: a.pageToken, pageSize: a.pageSize || 25, fields: 'nextPageToken,files(id,name,mimeType,modifiedTime,webViewLink)', supportsAllDrives: 'true', includeItemsFromAllDrives: 'true', corpora: 'allDrives' });
+    if (name === 'get_file') return get('/files/' + segment(a.fileId), { fields: 'id,name,mimeType,description,modifiedTime,webViewLink,parents,size', supportsAllDrives: 'true' });
     if (name === 'export_file') return { ...get('/files/' + segment(a.fileId) + '/export', { mimeType: a.mimeType }), text: true };
     if (name === 'create_file') return write('/files', a.metadata);
     if (name === 'update_file') return write('/files/' + segment(a.fileId), a.metadata, 'PATCH');

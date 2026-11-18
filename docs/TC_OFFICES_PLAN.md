@@ -192,3 +192,11 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - El proceso stdio se recicla a los 15 min sin uso; si el arranque perezoso se cuelga en CONNECTING, forzar `POST /api/connectors/refresh`.
 - **AVISO** revisó los textos de VIGÍA para el bono de casino de Playdoit: `aviso/informes/aviso-2026-11-18-playdoit-casino-bono.md` (Aprobado con cambios). Ajuste: no exigir momio mínimo en bonos de casino.
 - **NORMA** revisó Codere y Betsson: `norma/informes/permisos-2026-11-18.md`. Permisos base confirmados; oficios distintos entre operador y TC; el listado de la SEGOB no cargó. Lista de permisos registrados actualizada.
+
+## Google Drive conectado (18 nov 2026)
+
+- Proyecto de Google Cloud `tc-offices` en la organización tribunacentral.com, app **Internal** (sin verificación de Google), cliente de escritorio "TC Offices sidecar". APIs activas: Drive, Docs, Sheets, Search Console.
+- El JSON del cliente vive en `sidecar/mcp/google-client.json` (ignorado por git) con `"tcInternal": true`; con eso el sidecar quita el diferimiento de StarNet. Copia del original en `dev/.scratch-tc-offices/_secretos/`.
+- Arreglos: el canje del código OAuth fallaba con "fetch failed" en Node 24 (fetch interno + Agent de undici 6); ahora usa `undici.fetch`. `list_files` y `get_file` incluyen unidades compartidas.
+- Conector `google-drive` arriba con 5 herramientas (scopes drive.readonly + drive.file). CIERRE lee las entregas con `export_file`.
+- Search Console todavía no tiene conector en el catálogo: se hace con el departamento de SEO.
