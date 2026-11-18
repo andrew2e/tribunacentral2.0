@@ -87,7 +87,7 @@ for a in r['agents']:
     if a['agentId'] == 'tablero':
         intro, common = a['system'].split('\n\n')[0:2]
         a['system'] = intro + '\n\n' + common + '\n\n' + TABLERO_MANUAL
-        a['model'] = 'sonnet'
+        a['model'] = 'sonnet'; a['executionProfile'] = 'safe-cell'
 
 def fix(a):
     if a.get('id') == 'tablero':
