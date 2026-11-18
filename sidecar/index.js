@@ -6119,6 +6119,15 @@ if (googleClientConfig.loadEarlyAccess({ readFile: () => fs.readFileSync(path.jo
   googleClientConfig.EARLY_ACCESS = true;
   console.log('  · Google early access build: every Google service is open before Google verification (unverified-app warning, 100-user cap)');
 }
+// TC Offices: el cliente de escritorio es una app "Internal" del Workspace de Tribuna Central (proyecto tc-offices).
+// Google no verifica apps internas, así que Drive y los demás servicios se abren sin la espera de la verificación
+// de StarNet. Solo se activa si el google-client.json local (fuera de git) trae "tcInternal": true.
+try {
+  if (GOOGLE_DESKTOP_CLIENT && JSON.parse(fs.readFileSync(path.join(__dirname, 'mcp', 'google-client.json'), 'utf8')).tcInternal === true) {
+    googleClientConfig.RELEASE_DEFERRED = false;
+    console.log('  · Google: cliente interno de Tribuna Central; Drive, Docs y Sheets habilitados');
+  }
+} catch (_) { /* sin cliente local: comportamiento de StarNet */ }
 const GOOGLE_OAUTH_ENV_CLIENT = (() => {
   const clientId = String(process.env.STARNET_GOOGLE_OAUTH_CLIENT_ID || '').trim();
   const clientSecret = String(process.env.STARNET_GOOGLE_OAUTH_CLIENT_SECRET || '').trim();
