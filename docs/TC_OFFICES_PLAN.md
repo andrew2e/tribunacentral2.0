@@ -200,3 +200,9 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - Arreglos: el canje del código OAuth fallaba con "fetch failed" en Node 24 (fetch interno + Agent de undici 6); ahora usa `undici.fetch`. `list_files` y `get_file` incluyen unidades compartidas.
 - Conector `google-drive` arriba con 5 herramientas (scopes drive.readonly + drive.file). CIERRE lee las entregas con `export_file`.
 - Search Console todavía no tiene conector en el catálogo: se hace con el departamento de SEO.
+
+## QA probado (18 nov 2026)
+
+- Prueba real: entrega de Micaela «Pilotos mexicanos en la F1» (card en Listo para WP). CIERRE leyó el doc por Drive, pidió el brief a TABLERO y repartió a CORRECTOR, VERIFICADOR y VOZ. Informe: `cierre/informes/qa-micaela-pilotos-mexicanos-f1-2026-11-18.md`. Veredicto CMayor con 11 puntos, errores de hecho verificados con fuente (Rebaque, Le Mans 1968, subcampeonatos), y corrección de dos revisores que no vieron los enlaces en el texto plano (CIERRE lo comprobó en HTML). ~12 min.
+- Ajustes tras la prueba: CIERRE firma como CIERRE, nombre fijo del informe y cabecera literal «QA Editor - CMayor|CMenor (fecha)».
+- Primera vez cada agente pide ALWAYS para Drive y Trello; después no.
