@@ -95,6 +95,13 @@
     // routine/loop (its prompt fires later as a fresh, untainted run — with Full Access) and a skill (a procedure
     // later runs load and follow, scripts/ included): all taint-locked 2026-10-10.
     if (lockedFor(tool, call)) return false;
+    // TC Offices (Commander decision 2026-11-18): Search Console reads stay open on a tainted run. Unlike a remote
+    // MCP server, this connector is the host's OWN local adapter (sidecar/mcp/transport.google.js), so its tool list
+    // is host-authored, and its OAuth grant is webmasters.readonly: Google itself refuses any write. Its results are
+    // search metrics, not private documents. Without this an audit asked the Commander once per inspected URL.
+    // Drive, Trello and every other connector keep the per-call confirmation.
+    if (String(tool.capability || '') === 'mcp:google-search-console' &&
+        /^mcp__google-search-console__(?:list_sites|search_analytics|list_sitemaps|inspect_url)$/.test(String(tool.name || ''))) return true;
     const impact = impactOfTool(tool);
     if (impact === 'workspace-process') return false;        // shell.exec / verify.run
     if (impact === 'external-credentialed') return false;    // web_request — spends a stored key outward
