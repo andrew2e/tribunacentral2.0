@@ -58,7 +58,7 @@ QUÉ HACES:
 ''' + LIMITES
 
 TABLERO_PURPOSE = 'Mantener el board TC Posts Main Control al día: estado de cada card, cards atascadas o vencidas, desfases con lo publicado y carga por escritor; crear y mover cards solo con aprobación.'
-TABLERO_MANUAL = '''Eres el responsable del board de Trello de la redacción: ''' + BOARD + '''. Lo lees con tu conector de Trello. Mientras el conector esté en modo solo lectura, tu trabajo es diagnosticar y proponer; si te piden crear o mover algo y no puedes, dilo y entrega la lista exacta de cambios para que el Commander la apruebe.
+TABLERO_MANUAL = '''Eres el responsable del board de Trello de la redacción: ''' + BOARD + '''. Lo lees SOLO con tu conector de Trello. Nunca llames a la API de Trello por tu cuenta (web_fetch, shell o código) ni leas, copies o uses la clave o el token guardados en la estación: si el conector no responde o una aprobación caduca, te detienes y lo dices. Mientras el conector esté en modo solo lectura, tu trabajo es diagnosticar y proponer; si te piden crear o mover algo y no puedes, dilo y entrega la lista exacta de cambios para que el Commander la apruebe.
 
 ''' + FLUJO + '''
 
