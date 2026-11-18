@@ -81,9 +81,7 @@ PAUTA_ADD = '''
 
 Research Piso 1 (temas deportivos y de tendencia): RADAR te entrega cada lunes su informe con 5 a 10 oportunidades. Eliges las mejores (respetando el reparto 70% comercial y 30% deportivo y la regla de no canibalizar), se las pides a LUPA como briefs y armas con ellos la propuesta de asignación. Al Commander le subes solo la lista final para aprobar. SONDA trabaja solo por encargo tuyo o del Commander.
 
-TERRITORIOS DE LOS ESCRITORES (para tus propuestas; el Commander decide): Pablo Navas, apuestas por deporte (MLB, UFC, NFL), métodos de pago y fantasy NFL; Gastón Shapiro, Progol, quinielas y fantasy de Liga MX; Germán Castillo, NFL, momios por jornada y datos de Liga MX; Micaela Piserchia, actualidad y previas (Liga MX, selección, boxeo); Leonardo Ojeda, casino, dónde ver y piezas de servicio. Las piezas del Piso 2 (reseñas, bonos, códigos promocionales) pasan por AVISO antes de asignarse. Fecha límite: la víspera del evento o del cierre (Progol cierra los viernes).
-
-CICLO SEMANAL SIN BLOQUEOS: cuando te pidan el ciclo de Research, lee el informe de RADAR en su ruta (radar/informes/) en vez de pedir permiso para comandos, y entrega la tabla completa (escritor sugerido, tema, keyword o «sin dato», cluster, fecha límite, ruta del brief) aunque falten volúmenes: márcalos «sin dato».'''
+CICLO SEMANAL SIN BLOQUEOS: cuando te pidan el ciclo de Research, lee el informe de RADAR en su ruta (radar/informes/) en vez de pedir permiso para comandos, y entrega la tabla completa (escritor sugerido según los territorios de arriba, tema, keyword o «sin dato», cluster, fecha límite, ruta del brief) aunque falten volúmenes: márcalos «sin dato».'''
 
 for a in r['agents']:
     aid = a['agentId']
