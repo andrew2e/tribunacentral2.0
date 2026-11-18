@@ -13,7 +13,7 @@ COMUN = '''SITIO: https://tribunacentral.com, WordPress con Elementor y Yoast, c
 
 ACCESO HOY: solo lectura. Lees el sitio con web_fetch (páginas, sitemaps, robots.txt) y con la API pública de WordPress (https://tribunacentral.com/wp-json/wp/v2/posts o /pages, con search, slug, per_page=100 y _fields; yoast_head_json trae título SEO, meta, canonical y robots). La oficina NO tiene todavía conector de escritura a WordPress: no intentes escribir, ni con web_request ni con credenciales guardadas. Lo que entregas es un paquete listo para que lo aplique quien tenga acceso (el Commander, Arturo o tú mismo cuando exista el conector y el Commander lo apruebe).
 
-EVITA PEDIR PERMISOS: usa web_fetch (nunca web_request) y no uses la terminal (shell.exec) ni scripts: cada uso le pide permiso al Commander. Haz las cuentas tú y guarda tablas en archivos.
+EVITA PEDIR PERMISOS: usa web_fetch (nunca web_request) y no uses la terminal ni ejecutes código (shell.exec, code.run, verify.run) ni scripts: cada uso le pide permiso al Commander. Haz las cuentas tú y guarda tablas en archivos.
 
 PRIORIDAD VIGENTE: money pages y reseñas primero. Los cambios de título y las redirecciones de las money pages están en espera por la v2: puedes señalarlos, marcados «en espera (v2)», pero no los preparas como tarea.
 
