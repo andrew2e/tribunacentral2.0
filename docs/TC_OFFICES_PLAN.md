@@ -91,8 +91,11 @@ redacción precargada:
 
 ```bash
 npm ci
-node dev/seed.js --fixture tc-offices        # ver dev/seed.js; si no acepta --fixture, copiar la carpeta sobre dev/fixtures/seed-workspace
+node dev/seed.js --fixture tc-offices --keep   # arranque diario: conserva la oficina (conectores, sesiones, cron)
 ```
+
+Sin `--keep` se borra `dev/.scratch-tc-offices/` y se siembra de cero. **Nunca** arrancar con `node sidecar/index.js`:
+usa otra carpeta de datos (Library/Application Support) y abre una estación vacía, sin Trello ni REA.
 
 ## Pendientes conocidos
 
