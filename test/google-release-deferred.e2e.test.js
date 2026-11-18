@@ -26,7 +26,7 @@ const { RELEASE_DEFERRED, isWorkspaceUrl } = require('../sidecar/mcp/google-clie
   const check = async () => {
     const catalog = (await fixture.json('GET', '/api/connectors/catalog')).body;
     const cards = catalog.connectors.filter(c => c.googleApi && c.id !== 'google-files');
-    assert.equal(cards.length, 6);
+    assert.equal(cards.length, 7);
     assert.match(cards.find(c => c.id === 'gmail').signInMessage, /security assessment/, 'Gmail names the assessment it waits on');
     assert.ok(!/assessment/.test(cards.find(c => c.id === 'google-calendar').signInMessage), 'Calendar only waits on app verification');
     assert.ok(cards.every(c => c.releaseDeferred && c.signInAvailable === false && /deferred/.test(c.signInMessage)));

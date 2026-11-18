@@ -11,7 +11,9 @@ const ENDPOINTS = Object.freeze({
   'google-calendar': 'https://www.googleapis.com/calendar/v3',
   'google-docs': 'https://docs.googleapis.com/v1/documents',
   'google-sheets': 'https://sheets.googleapis.com/v4/spreadsheets',
-  'google-files': 'https://www.googleapis.com/drive/v3#selected-files'
+  'google-files': 'https://www.googleapis.com/drive/v3#selected-files',
+  // TC Offices: Search Console (webmasters.readonly). Solo lectura: rendimiento, sitemaps e inspección de URL.
+  'google-search-console': 'https://searchconsole.googleapis.com/webmasters/v3'
 });
 const STR = { type: 'string' };
 function tool(name, description, properties, required, readOnly) {
@@ -47,6 +49,12 @@ const TOOLS = {
     tool('get_document', 'Read a Google document and its structured content.', { documentId: STR }, ['documentId'], true),
     tool('create_document', 'Create a Google document with a title.', { title: STR }, ['title']),
     tool('batch_update', 'Edit a Google document using Docs API batchUpdate requests. Use writeControl to avoid overwriting concurrent edits.', { documentId: STR, requests: { type: 'array', items: { type: 'object' }, minItems: 1, maxItems: 100 }, writeControl: { type: 'object' } }, ['documentId', 'requests'])
+  ],
+  'google-search-console': [
+    tool('list_sites', 'List the Search Console properties the signed-in account can read (siteUrl and permission level).', {}, [], true),
+    tool('search_analytics', 'Query Search Console performance (clicks, impressions, CTR, position). siteUrl exactly as list_sites returns it (e.g. sc-domain:example.com or https://example.com/). Dates YYYY-MM-DD; data lags 2 to 3 days. dimensions: query, page, date, country, device, searchAppearance. dimensionFilterGroups follows the Search Console API. rowLimit max 25000; use startRow to page.', { siteUrl: STR, startDate: STR, endDate: STR, dimensions: { type: 'array', items: STR, maxItems: 5 }, type: { type: 'string', enum: ['web', 'image', 'video', 'news', 'discover', 'googleNews'] }, dimensionFilterGroups: { type: 'array', items: { type: 'object' }, maxItems: 10 }, aggregationType: { type: 'string', enum: ['auto', 'byPage', 'byProperty'] }, dataState: { type: 'string', enum: ['final', 'all'] }, rowLimit: { type: 'integer', minimum: 1, maximum: 25000 }, startRow: { type: 'integer', minimum: 0 } }, ['siteUrl', 'startDate', 'endDate'], true),
+    tool('list_sitemaps', 'List the sitemaps submitted for a Search Console property, with errors, warnings and submitted/indexed counts.', { siteUrl: STR }, ['siteUrl'], true),
+    tool('inspect_url', 'URL Inspection: index status, coverage state, last crawl, canonical chosen by Google, mobile usability and rich results for one URL of the property. Quota about 2,000 calls per day; inspect only the URLs you need.', { siteUrl: STR, inspectionUrl: STR, languageCode: STR }, ['siteUrl', 'inspectionUrl'], true)
   ],
   'google-sheets': [
     tool('get_spreadsheet', 'Read spreadsheet metadata, sheets and named ranges.', { spreadsheetId: STR }, ['spreadsheetId'], true),
@@ -147,6 +155,18 @@ function requestFor(product, name, a) {
     if (name === 'create_file') return write('/files', a.metadata);
     if (name === 'update_file') return write('/files/' + segment(a.fileId), a.metadata, 'PATCH');
   }
+  if (product === 'google-search-console') {
+    if (name === 'list_sites') return get('/sites');
+    if (name === 'search_analytics') {
+      const body = { startDate: a.startDate, endDate: a.endDate, dimensions: a.dimensions, type: a.type, dimensionFilterGroups: a.dimensionFilterGroups,
+        aggregationType: a.aggregationType, dataState: a.dataState, rowLimit: a.rowLimit || 1000, startRow: a.startRow };
+      for (const k of Object.keys(body)) if (body[k] === undefined) delete body[k];
+      return write('/sites/' + segment(a.siteUrl) + '/searchAnalytics/query', body);
+    }
+    if (name === 'list_sitemaps') return get('/sites/' + segment(a.siteUrl) + '/sitemaps');
+    if (name === 'inspect_url') return { url: 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', method: 'POST',
+      body: { inspectionUrl: a.inspectionUrl, siteUrl: a.siteUrl, languageCode: a.languageCode || 'es-MX' } };
+  }
   if (product === 'google-calendar') {
     if (name === 'list_calendars') return get('/users/me/calendarList', { pageToken: a.pageToken, maxResults: 100 });
     if (name === 'list_events') return get('/calendars/' + segment(a.calendarId || 'primary') + '/events', { timeMin: a.timeMin, timeMax: a.timeMax, pageToken: a.pageToken, q: a.query, maxResults: 100, singleEvents: true, orderBy: 'startTime' });
@@ -209,7 +229,7 @@ function makeGoogleTransport({ url, token, fetchImpl = fetch, timeoutMs = 30000 
         // Prove the account/service responds before publishing connected status.
         // gmail.send cannot read the mailbox profile; the granted openid/email scopes prove the account instead.
         const probe = product === 'gmail-send' ? { url: 'https://openidconnect.googleapis.com/v1/userinfo' }
-          : product === 'gmail' ? { url: url + '/profile' } : product === 'google-calendar' ? { url: url + '/users/me/calendarList', query: { maxResults: 1 } }
+          : product === 'gmail' ? { url: url + '/profile' } : product === 'google-search-console' ? { url: url + '/sites' } : product === 'google-calendar' ? { url: url + '/users/me/calendarList', query: { maxResults: 1 } }
           : { url: ENDPOINTS['google-drive'] + '/files', query: { pageSize: 1, fields: 'files(id)' } };
         await request(probe);
         result = { protocolVersion: msg.params?.protocolVersion || '2025-06-18', capabilities: { tools: {} }, serverInfo: { name: 'StarNet Google API connector', version: '1' } };

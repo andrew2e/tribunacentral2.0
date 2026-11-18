@@ -26,6 +26,8 @@ const catalog = require('../sidecar/mcp/catalog.js');
   assert.equal(resolveConnectorOauthTarget('gmail', catalog, [{ id: 'gmail', oauth: true, transport: 'http', url: 'https://custom.example/mcp' }]).custom, true);
 
   const examples = {
+    list_sites: {}, search_analytics: { siteUrl: 'sc-domain:example.invalid', startDate: '2026-10-01', endDate: '2026-10-31', dimensions: ['page'] },
+    list_sitemaps: { siteUrl: 'sc-domain:example.invalid' }, inspect_url: { siteUrl: 'sc-domain:example.invalid', inspectionUrl: 'https://example.invalid/' },
     search_messages: { query: 'from:test@example.invalid', pageToken: 'next&evil=1' }, read_message: { messageId: 'message-1' },
     read_thread: { threadId: 'thread-1' }, read_attachment: { messageId: 'message-1', attachmentId: 'attachment-1' },
     send_email: { to: ['Test <test@example.invalid>'], subject: 'Hello', body: 'Hi' },
@@ -56,7 +58,7 @@ const catalog = require('../sidecar/mcp/catalog.js');
       const args = name === 'batch_update' ? product === 'google-docs' || def.name.startsWith('docs_') ? { documentId: 'document-1', requests: [{ insertText: { text: 'hi', endOfSegmentLocation: {} } }] } : { spreadsheetId: 'sheet-1', requests: [{ addSheet: { properties: { title: 'New' } } }] } : examples[name];
       const response = await client.callTool(def.name, args);
       assert.equal(response.isError, false);
-      assert.ok(calls.at(-1).target.startsWith(product === 'google-files' ? ENDPOINTS[def.name.startsWith('docs_') ? 'google-docs' : def.name.startsWith('sheets_') ? 'google-sheets' : 'google-drive'] : url.replace(/#.*$/, '')));
+      assert.ok(def.name === 'inspect_url' ? calls.at(-1).target.startsWith('https://searchconsole.googleapis.com/v1/urlInspection/') : calls.at(-1).target.startsWith(product === 'google-files' ? ENDPOINTS[def.name.startsWith('docs_') ? 'google-docs' : def.name.startsWith('sheets_') ? 'google-sheets' : 'google-drive'] : url.replace(/#.*$/, '')));
       if (def.name === 'write_values') assert.equal(new URL(calls.at(-1).target).searchParams.get('valueInputOption'), 'RAW');
       if (def.name === 'search_messages') assert.equal(new URL(calls.at(-1).target).searchParams.get('pageToken'), 'next&evil=1');
       exercised++;

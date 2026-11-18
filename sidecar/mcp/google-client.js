@@ -42,11 +42,12 @@ const SERVICES = Object.freeze({
   'google-drive': { name: 'Google Drive', tier: 'restricted', url: 'https://www.googleapis.com/drive/v3' },
   'google-calendar': { name: 'Google Calendar', tier: 'sensitive', url: 'https://www.googleapis.com/calendar/v3' },
   'google-docs': { name: 'Google Docs', tier: 'sensitive', url: 'https://docs.googleapis.com/v1/documents' },
-  'google-sheets': { name: 'Google Sheets', tier: 'sensitive', url: 'https://sheets.googleapis.com/v4/spreadsheets' }
+  'google-sheets': { name: 'Google Sheets', tier: 'sensitive', url: 'https://sheets.googleapis.com/v4/spreadsheets' },
+  'google-search-console': { name: 'Google Search Console', tier: 'sensitive', url: 'https://searchconsole.googleapis.com/webmasters/v3' }
 });
 const RELEASED = {
   gmail: false, 'gmail-send': false, 'google-drive': false,
-  'google-calendar': false, 'google-docs': false, 'google-sheets': false
+  'google-calendar': false, 'google-docs': false, 'google-sheets': false, 'google-search-console': false
 };
 
 /* EARLY ACCESS — never a user setting. It opens every Google service BEFORE Google's verification: Google then
@@ -94,7 +95,7 @@ function isWorkspaceUrl(raw) {
     return u.protocol === 'https:' && !u.port && (
       ['gmail.googleapis.com', 'docs.googleapis.com', 'sheets.googleapis.com',
         'gmailmcp.googleapis.com', 'drivemcp.googleapis.com', 'calendarmcp.googleapis.com',
-        'docsmcp.googleapis.com', 'sheetsmcp.googleapis.com'].includes(u.hostname) ||
+        'docsmcp.googleapis.com', 'sheetsmcp.googleapis.com', 'searchconsole.googleapis.com'].includes(u.hostname) ||
       u.hostname === 'www.googleapis.com' && /^\/(drive|calendar)(\/|$)/.test(u.pathname));
   } catch (_) { return false; }
 }
