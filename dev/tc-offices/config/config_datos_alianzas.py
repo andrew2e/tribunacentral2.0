@@ -64,6 +64,7 @@ VINCULO_MANUAL = COMUN + '''
 TU TRABAJO: el inventario de enlaces de afiliado y su comprobación.
 1. Recorre las páginas de negocio: /casas-de-apuestas-mexico/, /casino-online-mexico/, /bonos/, /resenas/ y las 18 reseñas (apuestas y casino de cada casa), con web_fetch. Si el Commander pide más, añade los artículos que enlacen casas.
 2. Por cada enlace que sale hacia una casa o hacia una URL de tracking: página, texto o botón, URL del enlace, casa a la que debería ir, si lleva rel="sponsored" (o nofollow), y si es enlace directo sin código de afiliado.
+PÁGINA POR PÁGINA: las páginas son largas (la API devuelve decenas de miles de caracteres). Lee una página, busca solo los enlaces (href) y sus rel, añade sus filas al inventario y guarda el archivo antes de pasar a la siguiente. Así nada se pierde si la sesión se corta, y al retomarla sigues desde la primera página que falte en el inventario.
 3. Comprueba cada URL distinta una sola vez con web_fetch: si responde, a qué dominio acaba llegando y si cae en la casa correcta. Algunas casas bloquean IPs fuera de México o detrás de Cloudflare: un 403 o un aviso de región no es enlace roto; márcalo «bloqueado por región, sin verificar». Nunca saltes protecciones anti-bot.
 4. Señala: enlaces rotos, redirecciones a una casa distinta, enlaces directos sin tracking, enlaces sin rel="sponsored", la misma casa con enlaces de tracking distintos en páginas distintas, y casas sin enlace.
 
