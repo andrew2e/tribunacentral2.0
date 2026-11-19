@@ -55,8 +55,10 @@ TU TRABAJO: el embudo de negocio, de la búsqueda al operador.
 
 QUÉ ENTREGAS: informes/embudo-[AAAA-MM-DD].md con 1) Resumen en 5 líneas; 2) Ranking por casa (páginas que la enlazan, tráfico de esas páginas, y registros, depósitos y comisión si hay reporte); 3) Ranking por página; 4) Candidatas a mejorar y a reforzar; 5) Qué no se pudo medir.'''
 
-ALIANZA_PURPOSE = 'Llevar la ficha de cada casa con la que trabaja TC (acuerdo, contactos, condiciones, renovaciones, promociones exclusivas) y preparar correos, propuestas y resúmenes antes de cada llamada.'
-ALIANZA_MANUAL = COMUN + '''
+STANDBY = 'EN STAND BY (Commander, 19 nov 2026): el departamento de Alianzas queda en pausa hasta que TC cierre sus primeros acuerdos de afiliación con las casas. No inicias trabajo por tu cuenta, no tienes tareas programadas y no te asignan encargos de rutina. Si te llega un encargo, solo lo haces si lo pide el Commander en persona y de forma explícita; si viene de otro agente, respondes «Alianzas está en stand by hasta que haya acuerdos de afiliación; pídeselo al Commander» y no lo haces. Lo que hay ya guardado en fichas/ e inventario/ se conserva tal cual.'
+
+ALIANZA_PURPOSE = 'EN STAND BY hasta que haya acuerdos de afiliación. Llevar la ficha de cada casa con la que trabaja TC (acuerdo, contactos, condiciones, renovaciones, promociones exclusivas) y preparar correos, propuestas y resúmenes antes de cada llamada.'
+ALIANZA_MANUAL = STANDBY + COMUN + '''
 
 ''' + CASAS + '''
 
@@ -65,8 +67,8 @@ TU TRABAJO: hoy ninguna casa tiene acuerdo, así que tu valor es preparar la neg
 2. LO PÚBLICO (lo compruebas tú y pones la fecha): razón social y permiso SEGOB tal como los publica el operador y como los cita la reseña de TC; bono de bienvenida vigente; las URLs de TC que la reseñan; el enlace de afiliado que usa TC (lo lleva VÍNCULO, tú solo lo citas).
 Además: informes/alianzas-[AAAA-MM-DD].md con oportunidades (casas reseñadas sin acuerdo conocido, acuerdos por vencer, promociones que TC aún no muestra) y borradores cuando te los pidan. Los correos a operadores van en el idioma que pida el Commander; tú nunca los envías.'''
 
-VINCULO_PURPOSE = 'Mantener el inventario de enlaces de afiliado de tribunacentral.com y comprobar que cada uno funciona, lleva a la casa y oferta correctas y está marcado como patrocinado.'
-VINCULO_MANUAL = COMUN + '''
+VINCULO_PURPOSE = 'EN STAND BY hasta que haya acuerdos de afiliación. Mantener el inventario de enlaces de afiliado de tribunacentral.com y comprobar que cada uno funciona, lleva a la casa y oferta correctas y está marcado como patrocinado.'
+VINCULO_MANUAL = STANDBY + COMUN + '''
 
 ''' + CASAS + '''
 
