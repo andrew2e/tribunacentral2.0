@@ -226,3 +226,12 @@ Ubersuggest solo cuando esté conectado; RADAR informa cada lunes; el resto, pro
 - **EMBUDO** y **ALIANZA**: configurados, sin prueba. EMBUDO necesita enlaces de afiliado reales o reportes de afiliados en `entrada/`; ALIANZA necesita los datos comerciales del Commander.
 - **Pendiente de decisión del Commander**: conector de escritura a WordPress para PRENSA (recomendado: usuario «TC Offices» con rol Editor y contraseña de aplicación, nunca administrador).
 - **Aclaración del Commander (18 nov, 23:07):** TC todavía no tiene ninguna afiliación. Los CTA «Visitar» con `data-cta="pendiente"` son lo esperado. VÍNCULO rehízo su informe: 49 puntos de cambio listos para el primer acuerdo (18 reseñas, 18 botones de hubs, 13 tarjetas de /bonos/); 36 botones directos a la home de cada casa sin tracking (decisión A/B del Commander); 2 tarjetas de /bonos/ (b2, b10) quizá apuntan a la reseña de apuestas en vez de la de casino.
+
+## Redes y distribución, y Diseño (19 nov 2026)
+
+- Configurados con `dev/tc-offices/config/config_redes_diseno.py`: ALTAVOZ (plan semanal de redes fuera del feed de Instagram), BOLETÍN (borrador del newsletter), CLAQUETA (guiones faceless, voz «Diego» en ElevenLabs), TRAZO (piezas en Canva o encargo en inglés para Jerome) y MARCA (revisión contra la guía de marca e inventario del banco de imágenes).
+- Canva entra por el conector del catálogo (`canva`, https://mcp.canva.com/mcp, OAuth). Hay que conectarlo en Connectors con la cuenta de Canva del Commander: la conexión de claude.ai no sirve para la oficina.
+- Metricool no está conectado (decisión pendiente): nada se programa ni se publica desde la oficina.
+- El feed de Instagram lo sigue haciendo la tarea programada de Claude (skill instagram-tc-semanal). La oficina no lo duplica: mira la carpeta AEC de Canva antes de proponer.
+- Regla de las redes: solo deporte y contenido educativo, nada de apuestas. Todo enlace al sitio lleva UTM.
+- Sin prueba con trabajo real todavía.
