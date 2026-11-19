@@ -13,8 +13,11 @@ const ENDPOINTS = Object.freeze({
   'google-sheets': 'https://sheets.googleapis.com/v4/spreadsheets',
   'google-files': 'https://www.googleapis.com/drive/v3#selected-files',
   // TC Offices: Search Console (webmasters.readonly). Solo lectura: rendimiento, sitemaps e inspección de URL.
-  'google-search-console': 'https://searchconsole.googleapis.com/webmasters/v3'
+  'google-search-console': 'https://searchconsole.googleapis.com/webmasters/v3',
+  // TC Offices: Google Analytics 4 (analytics.readonly). Solo lectura: propiedades, metadatos e informes de la Data API.
+  'google-analytics': 'https://analyticsdata.googleapis.com/v1beta'
 });
+const GA_ADMIN = 'https://analyticsadmin.googleapis.com/v1beta';
 const STR = { type: 'string' };
 function tool(name, description, properties, required, readOnly) {
   return { name, description, inputSchema: { type: 'object', properties, required: required || [], additionalProperties: false },
@@ -55,6 +58,11 @@ const TOOLS = {
     tool('search_analytics', 'Query Search Console performance (clicks, impressions, CTR, position). siteUrl exactly as list_sites returns it (e.g. sc-domain:example.com or https://example.com/). Dates YYYY-MM-DD; data lags 2 to 3 days. dimensions: query, page, date, country, device, searchAppearance. dimensionFilterGroups follows the Search Console API. rowLimit max 25000; use startRow to page.', { siteUrl: STR, startDate: STR, endDate: STR, dimensions: { type: 'array', items: STR, maxItems: 5 }, type: { type: 'string', enum: ['web', 'image', 'video', 'news', 'discover', 'googleNews'] }, dimensionFilterGroups: { type: 'array', items: { type: 'object' }, maxItems: 10 }, aggregationType: { type: 'string', enum: ['auto', 'byPage', 'byProperty'] }, dataState: { type: 'string', enum: ['final', 'all'] }, rowLimit: { type: 'integer', minimum: 1, maximum: 25000 }, startRow: { type: 'integer', minimum: 0 } }, ['siteUrl', 'startDate', 'endDate'], true),
     tool('list_sitemaps', 'List the sitemaps submitted for a Search Console property, with errors, warnings and submitted/indexed counts.', { siteUrl: STR }, ['siteUrl'], true),
     tool('inspect_url', 'URL Inspection: index status, coverage state, last crawl, canonical chosen by Google, mobile usability and rich results for one URL of the property. Quota about 2,000 calls per day; inspect only the URLs you need.', { siteUrl: STR, inspectionUrl: STR, languageCode: STR }, ['siteUrl', 'inspectionUrl'], true)
+  ],
+  'google-analytics': [
+    tool('list_properties', 'List the Google Analytics 4 accounts and properties the signed-in account can read. Use the numeric property id (properties/123456789 -> 123456789) in the other tools.', { pageToken: STR }, [], true),
+    tool('get_metadata', 'List the dimensions and metrics a GA4 property supports (apiName, uiName, description), including its custom dimensions and events. Check names here before run_report.', { propertyId: STR }, ['propertyId'], true),
+    tool('run_report', 'Run a GA4 Data API report (same data as the GA4 interface and Data Studio). dateRanges: [{startDate, endDate}] with YYYY-MM-DD or NdaysAgo/yesterday/today, up to 4 ranges to compare periods. dimensions: e.g. date, sessionDefaultChannelGroup, sessionSourceMedium, landingPagePlusQueryString, pagePath, pageTitle, country, city, deviceCategory, newVsReturning, eventName, linkDomain. metrics: e.g. activeUsers, newUsers, sessions, engagedSessions, engagementRate, userEngagementDuration, averageSessionDuration, screenPageViews, eventCount. dimensionFilter, metricFilter and orderBys follow the GA4 Data API. limit max 100000; use offset to page.', { propertyId: STR, dateRanges: { type: 'array', items: { type: 'object' }, minItems: 1, maxItems: 4 }, dimensions: { type: 'array', items: STR, maxItems: 9 }, metrics: { type: 'array', items: STR, minItems: 1, maxItems: 10 }, dimensionFilter: { type: 'object' }, metricFilter: { type: 'object' }, orderBys: { type: 'array', items: { type: 'object' }, maxItems: 10 }, limit: { type: 'integer', minimum: 1, maximum: 100000 }, offset: { type: 'integer', minimum: 0 }, keepEmptyRows: { type: 'boolean' } }, ['propertyId', 'dateRanges', 'metrics'], true)
   ],
   'google-sheets': [
     tool('get_spreadsheet', 'Read spreadsheet metadata, sheets and named ranges.', { spreadsheetId: STR }, ['spreadsheetId'], true),
@@ -167,6 +175,17 @@ function requestFor(product, name, a) {
     if (name === 'inspect_url') return { url: 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', method: 'POST',
       body: { inspectionUrl: a.inspectionUrl, siteUrl: a.siteUrl, languageCode: a.languageCode || 'es-MX' } };
   }
+  if (product === 'google-analytics') {
+    const prop = () => '/properties/' + segment(String(a.propertyId || '').replace(/^properties\//, ''));
+    if (name === 'list_properties') return { url: GA_ADMIN + '/accountSummaries', query: { pageSize: 200, pageToken: a.pageToken } };
+    if (name === 'get_metadata') return get(prop() + '/metadata');
+    if (name === 'run_report') {
+      const body = { dateRanges: a.dateRanges, dimensions: (a.dimensions || []).map(n => ({ name: n })), metrics: a.metrics.map(n => ({ name: n })),
+        dimensionFilter: a.dimensionFilter, metricFilter: a.metricFilter, orderBys: a.orderBys, limit: a.limit || 1000, offset: a.offset, keepEmptyRows: a.keepEmptyRows };
+      for (const k of Object.keys(body)) if (body[k] === undefined) delete body[k];
+      return write(prop() + ':runReport', body);
+    }
+  }
   if (product === 'google-calendar') {
     if (name === 'list_calendars') return get('/users/me/calendarList', { pageToken: a.pageToken, maxResults: 100 });
     if (name === 'list_events') return get('/calendars/' + segment(a.calendarId || 'primary') + '/events', { timeMin: a.timeMin, timeMax: a.timeMax, pageToken: a.pageToken, q: a.query, maxResults: 100, singleEvents: true, orderBy: 'startTime' });
@@ -229,7 +248,7 @@ function makeGoogleTransport({ url, token, fetchImpl = fetch, timeoutMs = 30000 
         // Prove the account/service responds before publishing connected status.
         // gmail.send cannot read the mailbox profile; the granted openid/email scopes prove the account instead.
         const probe = product === 'gmail-send' ? { url: 'https://openidconnect.googleapis.com/v1/userinfo' }
-          : product === 'gmail' ? { url: url + '/profile' } : product === 'google-search-console' ? { url: url + '/sites' } : product === 'google-calendar' ? { url: url + '/users/me/calendarList', query: { maxResults: 1 } }
+          : product === 'gmail' ? { url: url + '/profile' } : product === 'google-search-console' ? { url: url + '/sites' } : product === 'google-analytics' ? { url: GA_ADMIN + '/accountSummaries', query: { pageSize: 1 } } : product === 'google-calendar' ? { url: url + '/users/me/calendarList', query: { maxResults: 1 } }
           : { url: ENDPOINTS['google-drive'] + '/files', query: { pageSize: 1, fields: 'files(id)' } };
         await request(probe);
         result = { protocolVersion: msg.params?.protocolVersion || '2025-06-18', capabilities: { tools: {} }, serverInfo: { name: 'StarNet Google API connector', version: '1' } };

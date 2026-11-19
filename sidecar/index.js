@@ -15807,6 +15807,7 @@ async function handleConnectorUpsert(req, res) {
   // TC Offices: 'google-search-console' reads are exempt from the post-taint prompt (sidecar/taint.js) because it is
   // the host's own read-only Google adapter. That id may therefore never point anywhere else.
   if (id === 'google-search-console' && (transport !== 'http' || url !== 'https://searchconsole.googleapis.com/webmasters/v3')) return json(400, { error: 'google-search-console is reserved for the built-in Search Console connector' });
+  if (id === 'google-analytics' && (transport !== 'http' || url !== 'https://analyticsdata.googleapis.com/v1beta')) return json(400, { error: 'google-analytics is reserved for the built-in Google Analytics connector' });
   const selectedFileToggle = googleClientConfig.isSelectedFiles(prev) && transport === 'http' && url === prev.url && oauth &&
     Object.keys(body).every(k => ['id', 'transport', 'enabled'].includes(k));
   if (!selectedFileToggle && googleConnectorDeferred({ transport, url })) return json(503, { ok: false, saved: false, error: googleDeferredMessage({ url }), code: 'google_release_deferred' });

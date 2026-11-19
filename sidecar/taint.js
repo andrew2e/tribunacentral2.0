@@ -102,6 +102,9 @@
     // Drive, Trello and every other connector keep the per-call confirmation.
     if (String(tool.capability || '') === 'mcp:google-search-console' &&
         /^mcp__google-search-console__(?:list_sites|search_analytics|list_sitemaps|inspect_url)$/.test(String(tool.name || ''))) return true;
+    // TC Offices: Google Analytics 4 under the same reasoning (analytics.readonly, host-authored, structured numbers).
+    if (String(tool.capability || '') === 'mcp:google-analytics' &&
+        /^mcp__google-analytics__(?:list_properties|get_metadata|run_report)$/.test(String(tool.name || ''))) return true;
     const impact = impactOfTool(tool);
     if (impact === 'workspace-process') return false;        // shell.exec / verify.run
     if (impact === 'external-credentialed') return false;    // web_request — spends a stored key outward
